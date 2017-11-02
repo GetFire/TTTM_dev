@@ -7,14 +7,14 @@ import org.apache.log4j.Logger;
 
 
 /**
- * repr�sente un tour pour les tableaux de types int�grales
+ * repr�sente un tour pour les tableaux de types int�grales
  */
 public class TourIntegral extends Tour implements NodeListener
 {	
 	
 	/**
 	 * permet de connaitre le nombre de place qu'un joueur peut gagner (ou perdre)
-	 * apr�s ce tour
+	 * apr�s ce tour
 	 */ 
 	private int dif_place = 0;
 	protected ArrayList tourIntegralListenerList = new ArrayList();
@@ -47,7 +47,7 @@ public class TourIntegral extends Tour implements NodeListener
 	}
 
 	/**
-	 * permet de cr�er les noeuds pour le tour suivant
+	 * permet de cr�er les noeuds pour le tour suivant
 	 * @return les noeuds "nodes" du tour suivant
 	 */
 	public ArrayList createNextTour()
@@ -83,29 +83,29 @@ public class TourIntegral extends Tour implements NodeListener
 	}
 	
 	/**
-	 * ajoute un noeud au tour. Cette m�thode donne aussi un nom 
+	 * ajoute un noeud au tour. Cette m�thode donne aussi un nom 
 	 * au match contenu dans le noeud.
-	 * @param node le noeud � ajouter
+	 * @param node le noeud � ajouter
 	 */
 	public void addNode(Node node)
 	{
-		//== ajout automatique du nom donn� � ce match == 
-		// ya surement plus simple mais j'ai pas trouv� :(
+		//== ajout automatique du nom donn� � ce match == 
+		// ya surement plus simple mais j'ai pas trouv� :(
 		int nbMatchs = getNodes().size();
 		int mod = dif_place + 1;
 		int numJoueur = (nbMatchs*2)+1;
 		int place1 = 0;
-		logger.debug("numJoueur="+numJoueur+" mod="+mod);
+		logger.debug("Имя игрока="+numJoueur+" модификация="+mod);
 		place1 = numJoueur - ((numJoueur%mod)-1);
 		int place2 = place1 + dif_place;
-		node.getMatch().setName("Place "+place1+" � "+place2);
+		node.getMatch().setName("Место "+place1+" � "+place2);
 		getNodes().add(node);
 		node.addNodeListener(this);
 	}
 
 	/**
 	 * donne les vainqueurs des matchs de ce tours ou rempli
-	 * la liste de joueurs vides si le match n'est pas termin�
+	 * la liste de joueurs vides si le match n'est pas termin�
 	 * @return
 	 */
 	public ArrayList getWinners()
@@ -141,7 +141,7 @@ public class TourIntegral extends Tour implements NodeListener
 
 	/**
 	 * donne les vainqueurs des matchs de ce tours ou rempli
-	 * la liste de joueurs vides si le match n'est pas termin�
+	 * la liste de joueurs vides si le match n'est pas termin�
 	 * @return
 	 */	
 	public ArrayList getLosers()

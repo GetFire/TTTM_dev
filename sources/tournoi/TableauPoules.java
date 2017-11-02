@@ -6,12 +6,12 @@ import java.util.Iterator;
 import org.apache.log4j.Logger;
 
 /**
- * tableau avec des poules de joueurs. Apr�s les sorties de poules, les joueurs se
+ * tableau avec des poules de joueurs. Apr�s les sorties de poules, les joueurs se
  * retrouvent dans un ou plusieurs tableaux simples.
  */
 public class TableauPoules implements Tableau
 {
-	public static final String TYPE = "TABLEAU_POULE";
+	public static final String TYPE = "ТАБЛИЧНЫЙ_ПУТЬ";
 	private static Logger logger = Logger.getLogger(TableauPoules.class);
 	private ArrayList joueurs;
 	private ArrayList tableaux;
@@ -21,13 +21,13 @@ public class TableauPoules implements Tableau
 	private int min_joueurs = 0;
 	private String name = "";
 	private int nbJoueursParPoule = 0;
-	// permet de garder une trace de la facon dont les joueurs ont �t� ajout� dans les poules
+	// permet de garder une trace de la facon dont les joueurs ont �t� ajout� dans les poules
 	private ArrayList cltJoueursInPoule = new ArrayList();
 
 
 	public boolean started = false;
 
-	/** classement des joueurs � la fin de la poule */
+	/** classement des joueurs � la fin de la poule */
 	private ArrayList classementJoueurs;
 
 	public void setClassementJoueurList(ArrayList list)
@@ -38,8 +38,8 @@ public class TableauPoules implements Tableau
 	/**
 	 * supprime un joueur d'une poule
 	 * @param poule la poule
-	 * @param joueur le joueur � supprimer
-	 * @return vrai si l'op�ration s'est bien pass�e
+	 * @param joueur le joueur � supprimer
+	 * @return vrai si l'op�ration s'est bien pass�e
 	 */
 	public boolean removeJoueur(Poule poule, Joueur joueur)
 	{
@@ -207,7 +207,7 @@ public class TableauPoules implements Tableau
 	}
 
 	/**
-	 * ajoute un joueur � la fin de la poule
+	 * ajoute un joueur � la fin de la poule
 	 */
 	public void addJoueur(Joueur joueur)
 	{
@@ -232,10 +232,10 @@ public class TableauPoules implements Tableau
 		for (int i = 0; i < nbJoueurs; i++)
 		{
 			logger.debug("i+first = "+(i + first));
-			logger.debug("joueurs class�s.size"+joueursClasses.size());
+			logger.debug("игроки class�s.size"+joueursClasses.size());
 			if ((i + first) < joueursClasses.size())
 			{
-				logger.debug("joueur :"+joueursClasses.get(i + first));
+				logger.debug("игрок :"+joueursClasses.get(i + first));
 				((TableauSimple) tableaux.get(numTableau)).addJoueur((Joueur) joueursClasses.get(i + first));
 			}
 			else
@@ -260,9 +260,9 @@ public class TableauPoules implements Tableau
 	}
 
 	/**
-	 * permet d'obtenir le num�ro de la poule d'un joueur par rapport � son dossart
-	 * @param numJoueur le num�ro de dossart du joueur
-	 * @return le num�ro de la poule ou -1 si la poule n'a pas �t�  trouv�e
+	 * permet d'obtenir le num�ro de la poule d'un joueur par rapport � son dossart
+	 * @param numJoueur le num�ro de dossart du joueur
+	 * @return le num�ro de la poule ou -1 si la poule n'a pas �t�  trouv�e
 	 */
 	private int getNumPoule(int numJoueur)
 	{
@@ -283,9 +283,9 @@ public class TableauPoules implements Tableau
 	}
 
 	/**
-	 * class le joueur pass� en parametres ainsi que tout les joueurs de sa partie de tableau
-	 * @param numDossart le numero de dossart du joueur � classer
-	 * @param joueursClasses la liste des joueurs auquel les joueurs doivent �tre ajout�s
+	 * class le joueur pass� en parametres ainsi que tout les joueurs de sa partie de tableau
+	 * @param numDossart le numero de dossart du joueur � classer
+	 * @param joueursClasses la liste des joueurs auquel les joueurs doivent �tre ajout�s
 	 * @param ordreMatchs l'ordre de match de tableau
 	 */
 	private void classeJoueur(
@@ -299,7 +299,7 @@ public class TableauPoules implements Tableau
 	{
 		int nbMaxJoueursInTab = nbJoueursParPoules*poules.size();
         int profondeur = findProfondeur(ordreMatchs.size());
-        logger.debug("PROFONDEUR = "+profondeur);        
+        logger.debug("ГЛУБИНА = "+profondeur);
 		ArrayList poulesInterdites = new ArrayList();
        if(!joueursClasses.contains(cltJoueur))
         {
@@ -325,7 +325,7 @@ public class TableauPoules implements Tableau
         {
             int nextPlayer = ((Integer) iter.next()).intValue();
             int pos = (int) Math.ceil((double) ((double) nextPlayer / (double) poules.size()))+posFirstInPoules-1;            
-            //== si c une pseudo tete de s�rie
+            //== si c une pseudo tete de s�rie
             if(pos==posFirstInPoules)
             {
                 ClassementJoueurs clt = getClassementJoueur(cltJoueursInPoule, nextPlayer, posFirstInPoules);
@@ -349,7 +349,7 @@ public class TableauPoules implements Tableau
                     }
                     else if(whithPoulesInterdites)
                     {
-                        logger.debug("ATTENTION : "+clt.getClassement());
+                        logger.debug("ВНИМАНИЕ : "+clt.getClassement());
                         int numPoule = getJoueurClasse(clt.getClassement(),joueursClasses).getNumPoule();
                         poulesInterdites.add(new Integer(numPoule));
                         logger.debug("Poule interdite += "+numPoule);
@@ -365,7 +365,7 @@ public class TableauPoules implements Tableau
                 
                 if (nextClassement != null)
                 {
-                    // le joueur ne doit pas d�j� �tre class� et �caser un ancien classement
+                    // le joueur ne doit pas d�j� �tre class� et �caser un ancien classement
                     if(getJoueurClasse(nextClassement.getClassement(),joueursClasses)==null)
                     {
                         joueursClasses.add(nextClassement);
@@ -382,7 +382,7 @@ public class TableauPoules implements Tableau
                 }
                 else
                 {
-                    logger.debug("CLASSEMENT NULL");                    
+                    logger.debug("КЛАССИФИКАЦИЯ NULL");
                 }
             }
         }
@@ -391,9 +391,9 @@ public class TableauPoules implements Tableau
 
     /**
      * return une list de joueur classes par position
-     * @param joueursClasses la liste des joueurs class�s
-     * @param pos la position � rechercher
-     * @return la liste des joueurs situ�s � la m�me position.
+     * @param joueursClasses la liste des joueurs class�s
+     * @param pos la position � rechercher
+     * @return la liste des joueurs situ�s � la m�me position.
      */
     private ArrayList getJoueurParPos(ArrayList joueursClasses, int firstInPoule, int pos)
     {
@@ -411,8 +411,8 @@ public class TableauPoules implements Tableau
     }
     
     /**
-     * permet de permuter 2 joueurs class�s
-     * @param joueursClasses la liste des joueurs class�s
+     * permet de permuter 2 joueurs class�s
+     * @param joueursClasses la liste des joueurs class�s
      * @param j1 le joueur1
      * @param j2 le joueur2
      */
@@ -467,11 +467,11 @@ public class TableauPoules implements Tableau
     }
     
 	/**
-	 * trouve le ClassementJoueur dans la liste suivant les crit�res fournis.
+	 * trouve le ClassementJoueur dans la liste suivant les crit�res fournis.
 	 * @param cltJoueurList
-	 * @param numPoule le num�ro de la poule du joueur
-	 * @param numJoueur le num�ro du joueur dans la poule
-	 * @return null si aucun joueur n'a �t� trouv�
+	 * @param numPoule le num�ro de la poule du joueur
+	 * @param numJoueur le num�ro du joueur dans la poule
+	 * @return null si aucun joueur n'a �t� trouv�
 	 */
 	private ClassementJoueurs getClassementJoueur(ArrayList cltJoueurList, int numPoule, int numJoueur)
 	{
@@ -490,7 +490,7 @@ public class TableauPoules implements Tableau
 	/**
 	 * calcul la description la meilleur pour le classement des joueurs
 	 * en sortie de poules.
-	 * Afin que 2 joueurs de la m�me poule se rencontre le plus tard possible
+	 * Afin que 2 joueurs de la m�me poule se rencontre le plus tard possible
 	 * @return une liste de ClassementJoueurs
 	 */
 	private ArrayList calculDescription()
@@ -505,7 +505,7 @@ public class TableauPoules implements Tableau
         	int decalage = (posFirst-1)*(poules.size());
             Integer element1 = (Integer) iter1.next();
             int nbJoueurs = element1.intValue();
-            //== si le nombre de joueur est egal � 0 on prend tous le joueurs restant
+            //== si le nombre de joueur est egal � 0 on prend tous le joueurs restant
             if(nbJoueurs==0)
             {
                 logger.debug("nbMaxJoueursInPoule = "+nbMaxJoueursInPoule);
@@ -515,16 +515,16 @@ public class TableauPoules implements Tableau
             int nbJoueurParPoules = (int)(nbJoueurs/poules.size());
                         
             ArrayList joueursClasses = new ArrayList();        
-            //== r�cup�ration du classement des joueurs dans les poules ==
+            //== r�cup�ration du classement des joueurs dans les poules ==
             ArrayList cltInPouleList = getCompletedCltJoueurInPoule();
             logger.debug("CLTINPOULELIST.SIZE = "+cltInPouleList.size());
-            //== r�cup�ration de l'ordre des matchs par rapport au nombre de joueurs ==
+            //== r�cup�ration de l'ordre des matchs par rapport au nombre de joueurs ==
             ArrayList ordreMatchs = TableauSimple.getOrdreMatchList(nbJoueurs);
             logger.debug("OrdreMatchs.size()="+ordreMatchs.size());
             logger.debug("nbJoueurs="+nbJoueurs);            
-            //== classement des t�tes de s�rie ==
-            // attention, les joueurs pass�s en param�tres sont peut �tre les derniers de la poule
-            // dans ce cas, les t�tes de s�ries ne sont pas forcement en position 1 dans la poule       
+            //== classement des t�tes de s�rie ==
+            // attention, les joueurs pass�s en param�tres sont peut �tre les derniers de la poule
+            // dans ce cas, les t�tes de s�ries ne sont pas forcement en position 1 dans la poule       
             for (int i = 0; i < poules.size() && joueursClasses.size()<joueurs.size(); i++)
             {
                 ClassementJoueurs clt = getClassementJoueur(cltInPouleList, i + 1, posFirst);
@@ -537,7 +537,7 @@ public class TableauPoules implements Tableau
                 classeJoueur(clt, joueursClasses, ordreMatchs, cltInPouleList,posFirst,nbJoueurParPoules, true);
                 logger.debug("JoueursClasses.size()="+joueursClasses.size());
             }
-            //== on tente de classer les autres joueurs en �vitant les poules interdites ==
+            //== on tente de classer les autres joueurs en �vitant les poules interdites ==
             logger.debug("joueur.size()"+joueurs.size());
             for (Iterator iter = cltInPouleList.iterator(); iter.hasNext();)
             {                
@@ -545,8 +545,8 @@ public class TableauPoules implements Tableau
                 logger.debug("P"+element.getNumPoule()+"J"+element.getNumJoueur());
                 if (!joueursClasses.contains(element)&&element.getNumJoueur()>=posFirst)
                 {
-                    logger.debug("classement supl�mentaire : ");
-                    logger.debug("Joueur "+element.getClassement());
+                    logger.debug("классификация supl�mentaire : ");
+                    logger.debug("игрок "+element.getClassement());
                     int sup = poules.size()*(element.getNumJoueur()-posFirst+1);
                     int inf = sup-poules.size()+1;
                     if(!(element.getClassement()<=sup&&element.getClassement()>=inf))
@@ -560,15 +560,15 @@ public class TableauPoules implements Tableau
             }
             if(joueursClasses.size() < (nbJoueurParPoules*poules.size()))
             {
-                //== on tente de classer les dernier joueur co�te que co�te            
+                //== on tente de classer les dernier joueur co�te que co�te            
                 for (Iterator iter = cltInPouleList.iterator(); iter.hasNext();)
                 {                
                     ClassementJoueurs element = (ClassementJoueurs) iter.next();
                     logger.debug("P"+element.getNumPoule()+"J"+element.getNumJoueur());
                     if (!joueursClasses.contains(element)&&element.getNumJoueur()>=posFirst)
                     {
-                        logger.debug("classement supl�mentaire : ");
-                        logger.debug("Joueur "+element.getClassement());
+                        logger.debug("классификация supl�mentaire : ");
+                        logger.debug("игрок "+element.getClassement());
                         int sup = poules.size()*(element.getNumJoueur()-posFirst+1);
                         int inf = sup-poules.size()+1;
                         if(!(element.getClassement()<=sup&&element.getClassement()>=inf))
@@ -581,10 +581,10 @@ public class TableauPoules implements Tableau
                     if(joueursClasses.size()>=(nbJoueurParPoules*poules.size())) break;    
                 }
             }
-            //== d�tection et correction des joueurs de la m�me poule situ�s dans 
-            //== la m�me partie de tableau
+            //== d�tection et correction des joueurs de la m�me poule situ�s dans 
+            //== la m�me partie de tableau
             int nbError = fixeErrors(ordreMatchs,joueursClasses,posFirst, findProfondeur(ordreMatchs.size()));
-            logger.debug(nbError+" ERREURS DETECTEES !!!");
+            logger.debug(nbError+" ОШИБКИ ОБНАРУЖЕНЫ !!!");
             int currentErrors = nbError;
             while(currentErrors!=0)
             {
@@ -622,7 +622,7 @@ public class TableauPoules implements Tableau
 		ArrayList poulesInterdites,
 		int nbMaxJoueurInPoule)
 	{
-        logger.debug("DANS GET BAD PLAYER : ");
+        logger.debug("В ПОЛУЧИТЕ ПЛОХОЙ ПЛЕЕР : ");
         logger.debug("POS = "+pos);
         logger.debug("nbMaxJoueurInPOule = "+nbMaxJoueurInPoule);
 		if (pos > nbMaxJoueurInPoule)
@@ -633,7 +633,7 @@ public class TableauPoules implements Tableau
 		int pouleIndex = -1;
         
         
-		// en �vitant les poules interdites, on r�cup�re le joueurs le moins bien class�
+		// en �vitant les poules interdites, on r�cup�re le joueurs le moins bien class�
 		for (int i = 0; i < poules.size(); i++)
 		{
 			Integer ii = new Integer(i + 1);
@@ -653,7 +653,7 @@ public class TableauPoules implements Tableau
 		}
         if (joueurIndex == -1)
         {
-            logger.debug("Joueur introuvable");
+            logger.debug("Игрок не найден");
             logger.debug("FACHE DE DIOS !!! ");
             return null;
         }
@@ -665,11 +665,11 @@ public class TableauPoules implements Tableau
 	}
 
     /**
-     * Fonction interne utile pour r�cup�rer un liste tri�s des prochain joueurs
-     * plac�s dans la m�me partie du tableau que le joueur pass� en param�tre
-     * @param numJoueur le num�ro du joueur
+     * Fonction interne utile pour r�cup�rer un liste tri�s des prochain joueurs
+     * plac�s dans la m�me partie du tableau que le joueur pass� en param�tre
+     * @param numJoueur le num�ro du joueur
      * @param ordreMatchs l'ordre des match du tableau
-     * @return la liste des dossards tri�s des prochains joueurs de la m�me partie du tableau
+     * @return la liste des dossards tri�s des prochains joueurs de la m�me partie du tableau
      */
     /**
      * @param numJoueur
@@ -697,12 +697,12 @@ public class TableauPoules implements Tableau
                 if(adv1<=(poules.size()*nbMaxJoueursInPoule))
                 {
                     sortedPlayerList.add(new Integer(adv1));
-                    logger.debug("ajout de "+adv1);
+                    logger.debug("добавление"+adv1);
                 }               
                 if(adv2<=(poules.size()*nbMaxJoueursInPoule))
                 {
                     sortedPlayerList.add(new Integer(adv2));
-                    logger.debug("ajout de "+adv2);
+                    logger.debug("добавление "+adv2);
                 }                
             }
             /** sinon, on ajoute le meilleur joueur **/
@@ -711,19 +711,19 @@ public class TableauPoules implements Tableau
                 if(adv1!=0 && adv1<=(poules.size()*nbMaxJoueursInPoule))
                 {
                     sortedPlayerList.add(new Integer(adv1));
-                    logger.debug("ajout de "+adv1);
+                    logger.debug("добавление "+adv1);
                 }               
                 if(adv2!=0 && adv2<=(poules.size()*nbMaxJoueursInPoule))
                 {
                     sortedPlayerList.add(new Integer(adv2));
-                    logger.debug("ajout de "+adv2);
+                    logger.debug("добавление "+adv2);
                 }                                
             }
             matchIndex += coef;
             currentLine = (int)Math.floor((double)matchIndex/(double)prof);
             if(currentLine!=deadLine) break;
         }
-        /** on retourne la liste tri� **/
+        /** on retourne la liste tri� **/
         Collections.sort(sortedPlayerList);
         return sortedPlayerList;
     }
@@ -742,7 +742,7 @@ public class TableauPoules implements Tableau
      * calcul une profondeur afin que deux joueur ne puissent se rencontrer
      * avant les 1/2 finales
      * @param nbMatchs le nombre de matchs du tableau
-     * @return la profondeur calcul�e
+     * @return la profondeur calcul�e
      */
     private int findProfondeur(int nbMatchs)    
     {
@@ -761,10 +761,10 @@ public class TableauPoules implements Tableau
     }
 
 	/**
-	 * fonction interne qui permet de savoir si un joueur � d�j� �t� class�
+	 * fonction interne qui permet de savoir si un joueur � d�j� �t� class�
 	 * @param numJoueur le dossard du joueur
-	 * @param joueursClasses les joueurs d�ja class�s
-	 * @return true si le joueur � d�j� �t� class�
+	 * @param joueursClasses les joueurs d�ja class�s
+	 * @return true si le joueur � d�j� �t� class�
 	 */
 	private boolean isClasse(int numJoueur, ArrayList joueursClasses)
 	{
@@ -795,7 +795,7 @@ public class TableauPoules implements Tableau
     
 	/**
 	 * permet de classer automatiquement les joueurs en sortie de poule.
-	 * @return les joueurs tri�s
+	 * @return les joueurs tri�s
 	 */
 	private ArrayList sortWithoutDescription()
 	{
@@ -818,7 +818,7 @@ public class TableauPoules implements Tableau
 		// on suit l'ordre de la description
 		for (Iterator iter = classementJoueurs.iterator(); iter.hasNext();)
 		{
-            logger.debug("Dans classement joueurs : ");
+            logger.debug("В рейтинге игроков : ");
 			ClassementJoueurs element = (ClassementJoueurs) iter.next();
             logger.debug("P"+element.getNumPoule()+"J"+element.getNumJoueur());
             ArrayList joueurList = new ArrayList();
@@ -842,12 +842,12 @@ public class TableauPoules implements Tableau
 
 	/**
 	 * A obptimiser.
-	 * compl�te les tableau avec les joueurs en respectant la description.
-	 * toutes les poules doivent �tre termin�es.
+	 * compl�te les tableau avec les joueurs en respectant la description.
+	 * toutes les poules doivent �tre termin�es.
 	 */
 	public boolean completeTableaux()
 	{
-		//== on v�rifie que toutes les poules sont bien termin�es ==
+		//== on v�rifie que toutes les poules sont bien termin�es ==
 		for (Iterator iter = poules.iterator(); iter.hasNext();)
 		{
 			Poule poule = (Poule) iter.next();
@@ -856,7 +856,7 @@ public class TableauPoules implements Tableau
 				return false;
 			}
 		}
-		// on classe les joueurs automatiquement ou suivant l'ordre indiqu� dans le fichier de configuration
+		// on classe les joueurs automatiquement ou suivant l'ordre indiqu� dans le fichier de configuration
 		ArrayList joueursClasses = new ArrayList();
 		if (classementJoueurs==null || classementJoueurs.isEmpty())
 		{
@@ -868,7 +868,7 @@ public class TableauPoules implements Tableau
 			logger.debug("sort with description");
 			joueursClasses = sortWithDescription();
 		}
-		//== on compl�te les tableaux avec les joueurs pr�sents dans les poules ==
+		//== on compl�te les tableaux avec les joueurs pr�sents dans les poules ==
 		int i = 0;
 		int index = 0;
 		boolean stop = false;
@@ -879,8 +879,8 @@ public class TableauPoules implements Tableau
 			{
 				int nbMaxJoueursInPoule = (int) Math.ceil((double) ((double) joueurs.size() / (double) poules.size()));
 				nbJoueurs = (nbMaxJoueursInPoule*poules.size()) - index;
-				logger.debug("0 : on ajoute tous les joueurs restants : "+nbJoueurs);
-				logger.debug("joueurd class�s.size() : "+joueursClasses.size());
+				logger.debug("0 : мы добавляем всех оставшихся игроков : "+nbJoueurs);
+				logger.debug("joueurd class�s.size() : "+joueursClasses.size());
 				stop=true;
 			}
 			addJoueursInTab(joueursClasses, nbJoueurs, index, i);
@@ -948,13 +948,13 @@ public class TableauPoules implements Tableau
     }
     
     /**
-     * permet d'obtenir la list des joueurs de la m�me poule class� dans la<br>
-     * m�me partie de tableau
+     * permet d'obtenir la list des joueurs de la m�me poule class� dans la<br>
+     * m�me partie de tableau
      * @param OrdreMatch la liste des matchs du tableau
-     * @param joueursClasses la liste des joueurs d�ja class�s
+     * @param joueursClasses la liste des joueurs d�ja class�s
      * @param profondeur le nombre de matchs pour lesquels les joueurs doivent tous <br>
-     * �tre de poules diff�rentes
-     * @return la liste des joueurs concern�s par une erreur
+     * �tre de poules diff�rentes
+     * @return la liste des joueurs concern�s par une erreur
      */
     private ArrayList checkErrorsList(ArrayList ordreMatch, ArrayList joueursClasses, int posFirst, int profondeur)
     {
@@ -969,11 +969,11 @@ public class TableauPoules implements Tableau
             ClassementJoueurs clt1 =  getJoueur(joueursClasses,element.getAdversaire1()+decalage);
             if(clt1!=null)
             {
-                logger.debug("JOUEUR TROUVE");
+                logger.debug("JИГРОК НАЙДЕНО");
                 if(poulesList.contains(new Integer(clt1.getNumPoule())))
                 {                    
                     resultList.add(clt1);
-                    logger.debug("ERROR dans check error liste: "+clt1);
+                    logger.debug("ОШИБКА в списке ошибок проверки: "+clt1);
                 }
                 else
                 {
@@ -984,7 +984,7 @@ public class TableauPoules implements Tableau
             ClassementJoueurs clt2 =  getJoueur(joueursClasses,element.getAdversaire2()+decalage);
             if(clt2!=null)
             {
-                logger.debug("JOUEUR TROUVE");
+                logger.debug("ИГРОК НАЙДЕНО");
                 if(poulesList.contains(new Integer(clt2.getNumPoule())))
                 {
                     JoueurInTab error = new JoueurInTab(ordreMatch.indexOf(element), 2,clt2.getClassement());
@@ -1104,7 +1104,7 @@ public class TableauPoules implements Tableau
 		ClassementJoueurs cltLast_1 = (ClassementJoueurs)cltJoueursInPoule.get(cltJoueursInPoule.size()-2);
 		ClassementJoueurs clt = new ClassementJoueurs();
 		clt.setClassement(cltLast.getClassement()+1);
-		//== si les deux joueurs sont sur la m�me ligne :
+		//== si les deux joueurs sont sur la m�me ligne :
 		if(cltLast.getNumJoueur()==cltLast_1.getNumJoueur())
 		{
 			int coef = cltLast.getNumPoule()-cltLast_1.getNumPoule();
@@ -1126,7 +1126,7 @@ public class TableauPoules implements Tableau
 			//== de la droite vers la gauche
 			else
 			{
-				//== on est en d�but de poule
+				//== on est en d�but de poule
 				if(cltLast.getNumPoule()==1)
 				{
 					clt.setNumPoule(cltLast.getNumPoule());
@@ -1165,7 +1165,7 @@ public class TableauPoules implements Tableau
 	public void setJoueurs(ArrayList joueurs)
 	{
 		this.joueurs = joueurs;
-		//== r�initialistaion des poules
+		//== r�initialistaion des poules
 		for (Iterator iter = poules.iterator(); iter.hasNext();)
 		{
 			Poule poule = (Poule) iter.next();
@@ -1174,7 +1174,7 @@ public class TableauPoules implements Tableau
 		int numPoule = 0;
 		int coef = 1;
 		int indexLastPoule = poules.size() - 1;
-		// on applique la m�thode du serpentins
+		// on applique la m�thode du serpentins
 		for (int i=0; i<joueurs.size(); i++)
 		{
 			Joueur joueur = (Joueur) joueurs.get(i);
@@ -1186,7 +1186,7 @@ public class TableauPoules implements Tableau
 			cltJoueur.setClassement(i+1);
 			cltJoueursInPoule.add(cltJoueur);
 			
-			//== si derni�re ligne ==
+			//== si derni�re ligne ==
 			if (nbJoueursParPoule % 2 != 0 && numPoule == 0 && poule.getJoueurs().size() == nbJoueursParPoule - 1)
 			{
 				numPoule = poules.size() - 1;
@@ -1218,7 +1218,7 @@ public class TableauPoules implements Tableau
 	}
 
 	/* 
-	 * r�cup�re tous les joueurs du tableau
+	 * r�cup�re tous les joueurs du tableau
 	 */
 	public ArrayList getJoueurs()
 	{

@@ -37,19 +37,19 @@ public class FormFormulesAuto extends JInternalFrame implements TableModelListen
     
     private static final long serialVersionUID = 1L;
     private Vector formulesList = new Vector();
-	private JLabel lblFormules = new JLabel("Formules :");
+	private JLabel lblFormules = new JLabel("Формулы :");
 	private JList jlFormules;
-	private JLabel lblFormuleName = new JLabel("Nom :");
+	private JLabel lblFormuleName = new JLabel("Имя :");
 	private JTextField jtfFormuleName = new JTextField(5);	
 	private JLabel lblNbPoules = new JLabel("Nombre de poules :");
 	private JTextField jtfNbPoules = new JTextField(2);
 	private JLabel lblSortiePoule = new JLabel("Sortie de poules :");
 	private JButton bAddSortie = new JButton("+");
 	private JButton bDeleteSortie = new JButton("-");
-	private JButton bAddFormule = new JButton("Ajouter");
-	private JButton bUpdateFormule = new JButton("Modifier");
-	private JButton bDeleteFormule = new JButton("Supprimer");
-	private JButton bSaveFormule = new JButton("Sauvegarder");
+	private JButton bAddFormule = new JButton("Добавить");
+	private JButton bUpdateFormule = new JButton("Изменить");
+	private JButton bDeleteFormule = new JButton("Удалить");
+	private JButton bSaveFormule = new JButton("Сохранить");
 	private JTable jtSortiePoule = new JTable(new SortiePouleTableModel());
 	private Logger logger = Logger.getLogger(FormFormulesAuto.class);
 	
@@ -58,7 +58,7 @@ public class FormFormulesAuto extends JInternalFrame implements TableModelListen
 	
 	public FormFormulesAuto(Competition competition)
 	{
-		super("Liste des formules");
+		super("Список формул");
 		this.competition = competition;
 		setResizable(true);
 		setIconifiable(true);
@@ -297,8 +297,8 @@ public class FormFormulesAuto extends JInternalFrame implements TableModelListen
 				{
 					JOptionPane.showMessageDialog(
 							getContentPane(),
-							"Le nombre de joueur d'un tableau doit, pour cette formule,<br> �tre un multiple de "+nbPoules,
-							"Erreur !",
+							"Количество игроков в таблице для этой формулы должно быть кратным"+nbPoules,
+							"Ошибка !",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
@@ -318,7 +318,7 @@ public class FormFormulesAuto extends JInternalFrame implements TableModelListen
 
 	private void clearFields()
 	{
-		jtfFormuleName.setText("Nouvelle Formule");
+		jtfFormuleName.setText("Новая формула");
 		jtfNbPoules.setText("0");	
 		((SortiePouleTableModel)jtSortiePoule.getModel()).clear();	
 	}

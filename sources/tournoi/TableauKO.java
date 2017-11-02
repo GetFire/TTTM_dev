@@ -7,8 +7,8 @@ import java.util.Iterator;
 import org.apache.log4j.Logger;
 
 /**
- * mod�lisation d'un tableau de type KO.
- * L'ordre des match doit �tre indiqu� pour le premier tour.
+ * mod�lisation d'un tableau de type KO.
+ * L'ordre des match doit �tre indiqu� pour le premier tour.
  * Le traitement des tours suivants est automatique.
  */
 public class TableauKO extends TableauSimple implements NodeListener
@@ -49,7 +49,7 @@ public class TableauKO extends TableauSimple implements NodeListener
 	}
 
 	/**
-	 * calcul la place de tout les joueurs (m�me les Joueur.EMPTY)
+	 * calcul la place de tout les joueurs (m�me les Joueur.EMPTY)
 	 * @param joueur
 	 * @param numTour
 	 * @return la place du joueur
@@ -81,7 +81,7 @@ public class TableauKO extends TableauSimple implements NodeListener
 				}
 			}
 		}
-		return 0; // ne dois jamais aller i�i
+		return 0; // ne dois jamais aller i�i
 	}
 
 	
@@ -133,28 +133,28 @@ public class TableauKO extends TableauSimple implements NodeListener
 
 	
 	/* 
-	 * permet de cr�er le premier tour d'un tournoi de type KO.
+	 * permet de cr�er le premier tour d'un tournoi de type KO.
 	 */
 	public boolean creerPremierTour()
 	{
 		tours.clear();
 		if(max_joueurs!=0 && joueurs.size()>max_joueurs) return false;
-		logger.debug("avant gematchpremiertour()");
+		logger.debug("перед тем gematchpremiertour()");
 		ArrayList matchs = getMatchsPremierTour();		
-		Tour tour = new Tour("1/"+matchs.size()+" de finale");
+		Tour tour = new Tour("1/"+matchs.size()+" окончательный");
 		for (Iterator iter = matchs.iterator(); iter.hasNext();)
 		{
-			logger.debug("dans match");
+			logger.debug("в матче");
 			Node nodeEmpty = new Node();
 			nodeEmpty.setLostNode(null);
 			Match match1 = (Match) iter.next();		
-			match1.setName("1/"+matchs.size()+" de finale");	
+			match1.setName("1/"+matchs.size()+" окончательный");
 			Node node1 = new Node();
 			node1.setLostNode(null);
 			node1.setWinNode(nodeEmpty);					
 			node1.setMatch(match1);
 			Match match2 = (Match) iter.next();
-			match2.setName("1/"+matchs.size()+" de finale");			
+			match2.setName("1/"+matchs.size()+" окончательный");
 			Node node2 = new Node();
 			node2.setLostNode(null);
 			node2.setWinNode(nodeEmpty);						
@@ -176,10 +176,10 @@ public class TableauKO extends TableauSimple implements NodeListener
 	}
 
 	/**
-	 * g�n�ration du prochain tour du tableau.
-	 * Si un match n'est pas termin�, un noeud vide est cr�er mais
-	 * la m�thode return vrai
-	 * @return faux si tous les tours du tabeau ont d�ja �t� g�n�r�s
+	 * g�n�ration du prochain tour du tableau.
+	 * Si un match n'est pas termin�, un noeud vide est cr�er mais
+	 * la m�thode return vrai
+	 * @return faux si tous les tours du tabeau ont d�ja �t� g�n�r�s
 	 */
 	public boolean genererTourSuivant()
 	{		
@@ -191,8 +191,8 @@ public class TableauKO extends TableauSimple implements NodeListener
 			return false;
 		}	
 		String tourName = "";
-		if(nodes.size()/2==1) tourName="Finale";
-		else tourName=("1/"+(nodes.size()/2)+" de finale");	
+		if(nodes.size()/2==1) tourName="окончательный";
+		else tourName=("1/"+(nodes.size()/2)+" окончательный");
 		Tour tour = new Tour(tourName);
 		for (Iterator iter = nodes.iterator(); iter.hasNext();)
 		{

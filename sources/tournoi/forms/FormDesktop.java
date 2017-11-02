@@ -73,9 +73,9 @@ public class FormDesktop extends JFrame
 	JMenuBar menuBar = new JMenuBar();
 	//	Build the first menu.
 	JMenu menuCompetition = new JMenu("Соревнование");
-	JMenuItem menuSave = new JMenuItem("Sauvegarde");
-	JMenuItem menuRestauration = new JMenuItem("Restauration");
-	JCheckBoxMenuItem menuSauvegardeAuto = new JCheckBoxMenuItem("Sauvegarde automatique",false);			
+	JMenuItem menuSave = new JMenuItem("Сохранить");
+	JMenuItem menuRestauration = new JMenuItem("Восстановление");
+	JCheckBoxMenuItem menuSauvegardeAuto = new JCheckBoxMenuItem("Автоматическое резервирование",false);
 
 	menuCompetition.add(menuSave);
 	menuCompetition.add(menuRestauration);
@@ -85,29 +85,29 @@ public class FormDesktop extends JFrame
 		menu.getAccessibleContext().setAccessibleDescription(
 			"Открыть или закрыть окно");
 
-	JMenu menuImpression = new JMenu("Impression");
-	JMenuItem menuOptionImpression = new JMenuItem("Option");
+	JMenu menuImpression = new JMenu("Результат");
+	JMenuItem menuOptionImpression = new JMenuItem("Выбор");
 	menuImpression.add(menuOptionImpression);
 
 	// menu affichage joueur
 	
-		JCheckBoxMenuItem menuJoueur = new JCheckBoxMenuItem("Fen�tre joueurs",false);			
+		JCheckBoxMenuItem menuJoueur = new JCheckBoxMenuItem("Окно игроков",false);
 		menuJoueur.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre des joueurs");
+			"Показать или скрыть окно проигрывателя");
 
-		JCheckBoxMenuItem menuFormules = new JCheckBoxMenuItem("Fen�tre des formules",false);			
+		JCheckBoxMenuItem menuFormules = new JCheckBoxMenuItem("Окно форм",false);
 		menuJoueur.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre pour cr�er vos formules");
+			"Показать или скрыть окно для создания ваших формул");
 
 
-		JCheckBoxMenuItem menuTables = new JCheckBoxMenuItem("Fen�tre tables libres",false);			
+		JCheckBoxMenuItem menuTables = new JCheckBoxMenuItem("Окно бесплатных таблиц",false);
 		menuTables.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre des tables libres");
+			"Показать или скрыть окно бесплатных таблиц");
 
 
-		JCheckBoxMenuItem menuDossard = new JCheckBoxMenuItem("Dossards",true);
+		JCheckBoxMenuItem menuDossard = new JCheckBoxMenuItem("Нагрудники",true);
 		menuDossard.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache les num�ros de dossards des joueurs");
+			"Показывает или скрывает номера подписчиков игроков");
 		menuDossard.getModel().setSelected(Competition.isAfficheDossard());
 		
 		menuSauvegardeAuto.addActionListener(new ActionListener()
@@ -189,9 +189,9 @@ public class FormDesktop extends JFrame
 	});	
 
 	
-	JCheckBoxMenuItem menuTournoi = new JCheckBoxMenuItem("Fen�tre tournois",false);			
+	JCheckBoxMenuItem menuTournoi = new JCheckBoxMenuItem("Окно турниров",false);
 		menuJoueur.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre des tournois");
+			"Показать или скрыть окно турнира");
 		menuTournoi.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -261,14 +261,14 @@ public class FormDesktop extends JFrame
 	/**  Constructor for the FormMain object */
 	public FormDesktop(Competition competition)
 	{
-		super("Tennis de Table Tournois Manager");
+		super("Менеджер турниров по настольному теннису");
 		
 		desktop = new JDesktopPane();
 	    desktop.setBackground(new Color(155,169,202));
 		//desktop.setBackground(new Color(182,162,207));
 		this.competition = competition;
 		//==== gestion de la sauvegarde automatique ===
-		int time = configuration.getIntProperty("timer", 5, "sauvegarde");
+		int time = configuration.getIntProperty("таймер", 5, "сохранить");
 		timer = new Timer(time*60*1000,new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				saveCompetition();
@@ -290,8 +290,8 @@ public class FormDesktop extends JFrame
 				{
 					int result = JOptionPane.showConfirmDialog(
 						null,
-						"Quitter l'application ?",
-						"Attention",
+						"Выйти из приложения?",
+						"Внимание",
 						JOptionPane.YES_NO_OPTION);
 					if(result==JOptionPane.YES_OPTION)
 					{
@@ -411,18 +411,18 @@ public class FormDesktop extends JFrame
 						file = new File(file.getAbsolutePath()+".xml");
 						if(!file.createNewFile())
 						{
-							JOptionPane.showMessageDialog(this,"Erreur lors de l'enregistrement !","Erreur",JOptionPane.ERROR_MESSAGE);							
+							JOptionPane.showMessageDialog(this,"Ошибка при регистрации!","Ошибка",JOptionPane.ERROR_MESSAGE);
 						}
 					}
 				}
 				if(!competition.save(file))
 				{
-					JOptionPane.showMessageDialog(this,"Erreur lors de la sauvegarde","Erreur", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(this,"Ошибка при резервном копировании","Ошибка", JOptionPane.ERROR_MESSAGE);
 				}
 			}	
 			catch(Exception exp)
 			{			
-				JOptionPane.showMessageDialog(this,"Erreur lors de la sauvegarde","Erreur", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this,"Ошибка при резервном копировании","Ошибка", JOptionPane.ERROR_MESSAGE);
 			}
 						
 		}		

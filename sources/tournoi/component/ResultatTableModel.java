@@ -10,7 +10,7 @@ import javax.swing.table.AbstractTableModel;
 import tournoi.Joueur;
 
 /**
- *  Permet la repr�sentation des r�sultats d'un tournoi
+ *  Permet la repr�sentation des r�sultats d'un tournoi
  *
  *@author     captainpaf
  *@created    26 avril 2004
@@ -21,12 +21,12 @@ public class ResultatTableModel extends AbstractTableModel
      * 
      */
     private static final long serialVersionUID = 1L;
-    private String[] columnNames = {"Place",
-			"Nom",
-			"Pr�nom",
-			"Classement",
-			"Cat�gorie",
-			"Sexe"};
+    private String[] columnNames = {"Место",
+			"Имя",
+			"Фамилия",
+			"Классификация",
+			"CКатегория",
+			"Пол"};
 	private Object[][] data = null;
 
 	public ResultatTableModel(ArrayList joueurs)
@@ -36,7 +36,7 @@ public class ResultatTableModel extends AbstractTableModel
 	}
 
 	/**
-	 * permet de modifier les donn�e de la table
+	 * permet de modifier les donn�e de la table
 	 * @param joueurs la liste des joueurs du vainqueur au dernier
 	 */
 	public void setResultats(ArrayList joueurs)
@@ -62,11 +62,11 @@ public class ResultatTableModel extends AbstractTableModel
 				setValueAt(joueur.getCategorie().toString(),row,4);
 				if(joueur.isMasculin())
 				{
-					setValueAt("masulin",row,5);
+					setValueAt("мужчина",row,5);
 				}
 				else
 				{
-					setValueAt("f�minin",row,5);
+					setValueAt("женщина",row,5);
 				}				
 				place++;
 			}

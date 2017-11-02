@@ -11,7 +11,7 @@ import tournoi.exception.TournoiException;
 
 
 /**
- * Repr�sentation d'un tableau sans poule.
+ * Repr�sentation d'un tableau sans poule.
  */
 public abstract class TableauSimple extends Observable implements Tableau, JoueursModifier
 {
@@ -50,8 +50,8 @@ public abstract class TableauSimple extends Observable implements Tableau, Joueu
 	}
 
 	/**
-	 * cr�er la liste des matchs selon l'ordre du tableau qui contient plus de joueurs
-	 * que le nbJoueurs pass� en param�tre
+	 * cr�er la liste des matchs selon l'ordre du tableau qui contient plus de joueurs
+	 * que le nbJoueurs pass� en param�tre
 	 * @param nbJoueurs le nombre minimal de joueurs dans le tableau
 	 * @return la liste des matchs dans du haut du tableau vers le bas
 	 */
@@ -97,7 +97,7 @@ public abstract class TableauSimple extends Observable implements Tableau, Joueu
 	
 	public void calculOrdreMatchList()
 	{
-		logger.debug("Dans calcul ordre match list");
+		logger.debug("В списке соответствия расписания");
 		ArrayList temp = TableauSimple.getOrdreMatchList(joueurs.size());
 		ordreMatchList.clear();		
 		for (Iterator it = temp.iterator(); it.hasNext();)
@@ -152,11 +152,11 @@ public abstract class TableauSimple extends Observable implements Tableau, Joueu
 	}
 	
 	/**
-	 * permet d'�changer un joueur du tableau
-	 * si le nouveau joueur n'est pas pr�sent dans le tableau, l'ancien joueur est
-	 * rempla�� par le nouveau.
-	 * si le nouveau joueur est pr�sent dans le tableau, les deux joueurs permuttent
-	 * @return vrai si le nouveau joueur ne se trouvait pas d�j� dans le tableau
+	 * permet d'�changer un joueur du tableau
+	 * si le nouveau joueur n'est pas pr�sent dans le tableau, l'ancien joueur est
+	 * rempla�� par le nouveau.
+	 * si le nouveau joueur est pr�sent dans le tableau, les deux joueurs permuttent
+	 * @return vrai si le nouveau joueur ne se trouvait pas d�j� dans le tableau
 	 */
 	public boolean changeJoueur(Joueur oldJoueur, Joueur newJoueur)
 	{
@@ -215,13 +215,13 @@ public abstract class TableauSimple extends Observable implements Tableau, Joueu
 					joueur1 = (Joueur)joueurs.get(indexJ1);					
 				}
                 joueur1.setDossard(indexJ1+1);
-                logger.debug("dossard 1 = "+indexJ1);
+                logger.debug("нагрудник 1 = "+indexJ1);
 				if(indexJ2<joueurs.size())
 				{
 					joueur2 = (Joueur)joueurs.get(indexJ2);                    
 				}			
                 joueur2.setDossard(indexJ2+1);
-                logger.debug("dossard 2 = "+indexJ2);
+                logger.debug("нагрудник 2 = "+indexJ2);
 				Match match = new Match(joueur1, joueur2, 5);
 				matchsList.add(match);
 			}
@@ -231,7 +231,7 @@ public abstract class TableauSimple extends Observable implements Tableau, Joueu
 		{
 			for (Iterator iter = ordreMatchList.iterator(); iter.hasNext();)
 			{
-				logger.debug("dans la boucle");			
+				logger.debug("в цикле");
 				int indexJ1 = ((Integer) iter.next()).intValue()-1;
 				int indexJ2 = ((Integer) iter.next()).intValue()-1;
 				Joueur joueur1 = Joueur.EMPTY_JOUEUR;
