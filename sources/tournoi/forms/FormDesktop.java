@@ -55,8 +55,8 @@ public class FormDesktop extends JFrame
 	
 	public static PrinterJob printer = PrinterJob.getPrinterJob();
 	public static PageFormat pageFormat = printer.defaultPage();
-	
-	
+
+
 	public JDesktopPane getDesktop()
 	{
 		return desktop;
@@ -72,8 +72,8 @@ public class FormDesktop extends JFrame
 	//Create the menu bar.
 	JMenuBar menuBar = new JMenuBar();
 	//	Build the first menu.
-	JMenu menuCompetition = new JMenu("Comp�tition");	
-	JMenuItem menuSave = new JMenuItem("Sauvegarde");			
+	JMenu menuCompetition = new JMenu("Соревнование");
+	JMenuItem menuSave = new JMenuItem("Sauvegarde");
 	JMenuItem menuRestauration = new JMenuItem("Restauration");
 	JCheckBoxMenuItem menuSauvegardeAuto = new JCheckBoxMenuItem("Sauvegarde automatique",false);			
 
@@ -81,9 +81,9 @@ public class FormDesktop extends JFrame
 	menuCompetition.add(menuRestauration);
 	menuCompetition.add(menuSauvegardeAuto);
 	//Build the second menu.
-	JMenu menu = new JMenu("Affichage");
+	JMenu menu = new JMenu("Просмотр");
 		menu.getAccessibleContext().setAccessibleDescription(
-			"Pour afficher ou cacher des fen�tre.");
+			"Открыть или закрыть окно");
 
 	JMenu menuImpression = new JMenu("Impression");
 	JMenuItem menuOptionImpression = new JMenuItem("Option");
@@ -91,23 +91,23 @@ public class FormDesktop extends JFrame
 
 	// menu affichage joueur
 	
-		JCheckBoxMenuItem menuJoueur = new JCheckBoxMenuItem("Fen�tre joueurs",false);			
+		JCheckBoxMenuItem menuJoueur = new JCheckBoxMenuItem("Fen�tre joueurs",false);			
 		menuJoueur.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre des joueurs");
+			"Affiche ou cache la fen�tre des joueurs");
 
-		JCheckBoxMenuItem menuFormules = new JCheckBoxMenuItem("Fen�tre des formules",false);			
+		JCheckBoxMenuItem menuFormules = new JCheckBoxMenuItem("Fen�tre des formules",false);			
 		menuJoueur.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre pour cr�er vos formules");
+			"Affiche ou cache la fen�tre pour cr�er vos formules");
 
 
-		JCheckBoxMenuItem menuTables = new JCheckBoxMenuItem("Fen�tre tables libres",false);			
+		JCheckBoxMenuItem menuTables = new JCheckBoxMenuItem("Fen�tre tables libres",false);			
 		menuTables.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre des tables libres");
+			"Affiche ou cache la fen�tre des tables libres");
 
 
 		JCheckBoxMenuItem menuDossard = new JCheckBoxMenuItem("Dossards",true);
 		menuDossard.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache les num�ros de dossards des joueurs");
+			"Affiche ou cache les num�ros de dossards des joueurs");
 		menuDossard.getModel().setSelected(Competition.isAfficheDossard());
 		
 		menuSauvegardeAuto.addActionListener(new ActionListener()
@@ -189,9 +189,9 @@ public class FormDesktop extends JFrame
 	});	
 
 	
-	JCheckBoxMenuItem menuTournoi = new JCheckBoxMenuItem("Fen�tre tournois",false);			
+	JCheckBoxMenuItem menuTournoi = new JCheckBoxMenuItem("Fen�tre tournois",false);			
 		menuJoueur.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre des tournois");
+			"Affiche ou cache la fen�tre des tournois");
 		menuTournoi.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -403,7 +403,7 @@ public class FormDesktop extends JFrame
 			File file = fileChooser.getSelectedFile();
 			try
 			{
-				// si le fichier n'existe pas on le cr�er
+				// si le fichier n'existe pas on le cr�er
 				if(!file.exists())
 				{
 					if(!file.getName().endsWith(".xml")&&!file.getName().endsWith(".XML"))
