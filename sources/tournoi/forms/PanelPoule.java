@@ -19,7 +19,7 @@ import tournoi.component.PrintedPoule;
 import tournoi.component.PrintingPoule;
 
 /**
- * La fen�tre qui permet d'afficher une poule.
+ * La fen�tre qui permet d'afficher une poule.
  */
 public class PanelPoule extends JPanel
 {
@@ -31,19 +31,19 @@ public class PanelPoule extends JPanel
 	private Poule poule;
 	private JLabel lblTabPrinc = new JLabel("");
 	private JLabel lblPouleName = new JLabel("");
-	private JLabel lblListeMatch = new JLabel("Liste des matchs");
-	private JLabel lblSet = new JLabel("Set : ");
+	private JLabel lblListeMatch = new JLabel("Список матчей");
+	private JLabel lblSet = new JLabel("Сет : ");
 	private JLabel lblUn = new JLabel("1");
 	private JLabel lblDeux = new JLabel("2");
 	private JLabel lblTrois = new JLabel("3");
 	private JLabel lblQuatre = new JLabel("4");
 	private JLabel lblCinq = new JLabel("5");
-	private JButton bSave = new JButton("Sauvegarder");	
+	private JButton bSave = new JButton("Сохранить");
 	private JButton bUp = new JButton();
 	private JButton bDown = new JButton();
-	private JButton bValider = new JButton("Valider");
-	private JButton bImprimer = new JButton("Imprimer");
-	private JButton bSupprimer = new JButton("Supprimer");
+	private JButton bValider = new JButton("Утвердить");
+	private JButton bImprimer = new JButton("Печать");
+	private JButton bSupprimer = new JButton("Удалить");
 	private JButton bRight = new JButton();
 	private JButton bLeft = new JButton();
 	
@@ -82,14 +82,14 @@ public class PanelPoule extends JPanel
 		location = java.lang.ClassLoader.getSystemResource("fleche_droite.gif");
 		bRight.setIcon(new ImageIcon(location));
 
-		bUp.setToolTipText("Classe le joueur d'un niveau sup�rieur dans la poule.");
-		bDown.setToolTipText("Classe le joueur d'un niveau inf�rieur dans la poule.");
-		bLeft.setToolTipText("Permute le joueur s�lectionn� avec celui de la poule pr�c�dente.");
-		bRight.setToolTipText("Permute le joueur s�lectionn� avec celui de la poule suivante.");
-		bSupprimer.setToolTipText("Supprime le joueur s�lectionn� dans la poule.");
-        bImprimer.setToolTipText("Imprime la poule courante.");
-        bSave.setToolTipText("Sauvegarde les scores du match s�lectionn�.");
-        bValider.setToolTipText("Valide et sauvegarde le classement final des joueurs dans la poule.");
+		bUp.setToolTipText("Установить игрока более высокого уровня в пуле.");
+		bDown.setToolTipText("Ранг игрока нижнего уровня в пуле.");
+		bLeft.setToolTipText("Меняет выбранного игрока на одного из предыдущего пула.");
+		bRight.setToolTipText("Меняет выбранного игрока в следующем пуле.");
+		bSupprimer.setToolTipText("Удалить игрока, выбранного в пуле.");
+        bImprimer.setToolTipText("Распечатайте текущий пул.");
+        bSave.setToolTipText("Сохраните результаты выбранного совпадения.");
+        bValider.setToolTipText("Подтвердить и сохранить окончательный рейтинг игроков в пуле.");
         
 		setBounds(10, 10, 500, 300);
 		listeJoueurs = new JList();
@@ -275,7 +275,7 @@ public class PanelPoule extends JPanel
 		panel.add(tfTabJoueur1[4], constraints);
 		
 
-		//=================== 4�me ligne =========================
+		//=================== 4�me ligne =========================
 		ligne++;
 		constraints.gridx = 1;
 		constraints.gridy = ligne;
@@ -297,7 +297,7 @@ public class PanelPoule extends JPanel
 		constraints.gridx = 6;
 		panel.add(tfTabJoueur2[4], constraints);		
 
-		//=================== 5�me ligne =========================
+		//=================== 5�me ligne =========================
 		ligne++;
 		constraints.gridx = 1;
 		constraints.gridy = ligne;
@@ -320,7 +320,7 @@ public class PanelPoule extends JPanel
 		});
 		panel.add(bSave, constraints);
 				
-		//=================== 6�me ligne =========================
+		//=================== 6�me ligne =========================
 		ligne++;
 		constraints.gridx = 1;
 		constraints.gridy = ligne;
@@ -335,7 +335,7 @@ public class PanelPoule extends JPanel
 		constraints.insets = new Insets(2, 2, 2, 2);		
 		panel.add(new JLabel("<html><u>Classement final : </u></html>"), constraints);
 		
-		//=================== 7�me ligne =========================
+		//=================== 7�me ligne =========================
 		ligne++;
 		constraints.gridx = 1;
 		constraints.gridy = ligne;
@@ -366,7 +366,7 @@ public class PanelPoule extends JPanel
 		constraints.insets = new Insets(2, 2, 2, 2);		
 		panel.add(listeJoueurs, constraints);
 
-		//=================== 8�me ligne =========================
+		//=================== 8�me ligne =========================
 		ligne++;
 		constraints.gridx = 1;
 		constraints.gridy = ligne;
@@ -384,7 +384,7 @@ public class PanelPoule extends JPanel
 		constraints.gridx = 7;
 		panel.add(bRight, constraints);
 
-		//=================== 9�me ligne =========================
+		//=================== 9�me ligne =========================
 		ligne++;
 		constraints.gridx = 1;
 		constraints.gridy = ligne;
@@ -405,7 +405,7 @@ public class PanelPoule extends JPanel
 		constraints.gridx = 7;
 		panel.add(bSupprimer, constraints);
 		
-		//================== derni�re ligne ====================
+		//================== derni�re ligne ====================
 		ligne++;
 		constraints.gridx = 1;
 		constraints.gridy = ligne;
@@ -423,7 +423,7 @@ public class PanelPoule extends JPanel
 		//getContentPane().add(BorderLayout.CENTER, panel);
 		add(BorderLayout.CENTER, panel);
 		
-		// on enl�ve les focus inutiles
+		// on enl�ve les focus inutiles
 		bUp.setFocusable(false);
 		bDown.setFocusable(false);
 		bRight.setFocusable(false);
