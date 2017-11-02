@@ -16,7 +16,7 @@ import tournoi.component.PlaceTableCellRenderer;
 import myUtils.*;
 
 /**
- *  La fen�tre qui permet de saisir des joueurs.
+ *  La fen�tre qui permet de saisir des joueurs.
  */
 public class FormJoueur extends JInternalFrame implements Observer, TableModelListener
 {
@@ -27,12 +27,12 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
     private static final long serialVersionUID = 1L;
     private static Logger logger = Logger.getLogger(FormJoueur.class);
 	// private Vector lJoueurs;
-	private JLabel lblNom = new JLabel("Nom");
-	private JLabel lblPrenom = new JLabel("Prenom");
-	private JLabel lblMasculin = new JLabel("Masculin");
-	private JLabel lblFeminin = new JLabel("Feminin");
-	private JLabel lblClt = new JLabel("Classement");
-	private JLabel lblListeJoueurs = new JLabel("Liste des joueurs de la comp�tition");
+	private JLabel lblNom = new JLabel("Имя");
+	private JLabel lblPrenom = new JLabel("Фамилия");
+	private JLabel lblMasculin = new JLabel("Мужчина");
+	private JLabel lblFeminin = new JLabel("Женщина");
+	private JLabel lblClt = new JLabel("Класс");
+	private JLabel lblListeJoueurs = new JLabel("Список участников соревнований");
 
 	private JTextField tfNom = new JTextField(new ControledDocument(50, true, false), "", 13);
 	private JTextField tfPrenom = new JTextField(new ControledDocument(50, false, false), "", 13);
@@ -52,14 +52,14 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 	private JComboBox cbCategorie = new JComboBox(Categorie.getCategorieList());
 	private JComboBox cbClub = new JComboBox(club.getClubList());
 
-	private JButton bAjouter = new JButton("Ajouter");
-	private JButton bModifier = new JButton("Modifier");
-	private JButton bSupprimer = new JButton("Supprimer");
-	private JButton bSauverListe = new JButton("Enregistrer tout");
-	private JButton bSauverSelection = new JButton("Enregistrer s�lection");
-	private JButton bImprimerPresents = new JButton("Imprimer joueurs pr�sents");
-	private JButton bImprimerJoueurs = new JButton("Imprimer joueurs");
-	private JButton bChargerListe = new JButton("Charger");
+	private JButton bAjouter = new JButton("Добавить");
+	private JButton bModifier = new JButton("Изменить");
+	private JButton bSupprimer = new JButton("Удалить");
+	private JButton bSauverListe = new JButton("Сохранить все");
+	private JButton bSauverSelection = new JButton("Сохранить выбранные");
+	private JButton bImprimerPresents = new JButton("Присутствующие игроки");
+	private JButton bImprimerJoueurs = new JButton("Печать игроков");
+	private JButton bChargerListe = new JButton("Загрузка");
 	private JButton bAddClub = new JButton("+");
     private JButton bRAZPart = new JButton("RAZ participation");
     
@@ -71,7 +71,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 	/**  Constructor for the FormPoule object */
 	public FormJoueur(Competition competition)
 	{
-		super("Liste des joueurs de la comp�tition", true, true);
+		super("Список участников соревнований", true, true);
 		//setClosable(false);
 		this.competition = competition;
 		competition.addObserver(this);		
@@ -223,19 +223,19 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
                     }
                 });
 		
-        bAjouter.setToolTipText("Ajoute ce joueur � la liste des joueurs.");
-        bAddClub.setToolTipText("Ajoute le club renseign� � la liste des clubs.");
-        bChargerListe.setToolTipText("Charge une liste de joueurs � partir d'un fichier.");
-        bImprimerJoueurs.setToolTipText("Imprime la liste des joueurs.");
-        bImprimerPresents.setToolTipText("Imprime la liste des joueurs pr�sents dans le tournoi.");
-        bModifier.setToolTipText("Modifie le joueur s�lectionn�.");
-        bRAZPart.setToolTipText("Remet � z�ro le nombre de participation de tous les joueurs.");
-        bSauverListe.setToolTipText("Sauvegarde la liste des joueurs dans un fichier.");
-        bSauverSelection.setToolTipText("Sauvegarde la liste des joueurs pr�sents dans un fichier.");
-        bSupprimer.setToolTipText("Efface le joueur s�lectionn�.");
-        tfCltNew.setToolTipText("Nouveau classement (EX:1685)");
-        cbCltOld.setToolTipText("Ancien classement");
-        tfClub.setToolTipText("Permet de renseigner un nouveau club");
+        bAjouter.setToolTipText("Добавьте этого игрока в список игроков.");
+        bAddClub.setToolTipText("Добавьте клуб в список клубов.");
+        bChargerListe.setToolTipText("Загрузите список игроков из файла.");
+        bImprimerJoueurs.setToolTipText("Распечатайте список игроков.");
+        bImprimerPresents.setToolTipText("Распечатывает список игроков, присутствующих на турнире.");
+        bModifier.setToolTipText("Измените выбранного игрока.");
+        bRAZPart.setToolTipText("Измените количество участников всех игроков.");
+        bSauverListe.setToolTipText("Сохраняет список игроков в файле.");
+        bSauverSelection.setToolTipText("Сохраняет список игроков, присутствующих в файле.");
+        bSupprimer.setToolTipText("Очищает выбранного игрока.");
+        tfCltNew.setToolTipText("Новая классификация (EX: 1685)");
+        cbCltOld.setToolTipText("Старый рейтинг");
+        tfClub.setToolTipText("Позволяет сообщать о новом клубе");
         
 		int ligne = 0;
 		//================= 1ere ligne =========================
@@ -370,7 +370,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 		constraints.ipadx = 0;
 		constraints.ipady = 0;
 		constraints.insets = new Insets(2, 2, 2, 2);
-		panel.add(new JLabel("licenci�"), constraints);
+		panel.add(new JLabel("Лицензирован"), constraints);
 
 		constraints.gridx = 4;
 		constraints.gridwidth = 1;
@@ -394,7 +394,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 		constraints.ipadx = 0;
 		constraints.ipady = 0;
 		constraints.insets = new Insets(2, 2, 2, 2);
-		panel.add(new JLabel("Non licenci�"), constraints);
+		panel.add(new JLabel("Не лицензирован"), constraints);
 
 		constraints.gridx = 6;
 		constraints.gridwidth = 1;
@@ -420,7 +420,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 		constraints.ipadx = 0;
 		constraints.ipady = 0;
 		constraints.insets = new Insets(2, 2, 2, 2);
-		panel.add(new JLabel("Club"), constraints);
+		panel.add(new JLabel("Клуб"), constraints);
 
 		constraints.gridx = 4;
 		constraints.gridwidth = 1;
@@ -441,7 +441,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 		panel.add(bAddClub, constraints);
 		
 
-		//=================== 4�me ligne =========================
+		//=================== 4�me ligne =========================
 		constraints.gridx = 3;
 		constraints.gridy = ++ligne;
 		constraints.gridwidth = 1;
@@ -480,10 +480,10 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 		panel.add(cbCltOld, constraints);
 		
 		constraints.gridx = 6;
-		tfNumero.setToolTipText("joueurs num�rot�s");
+		tfNumero.setToolTipText("пронумерованные игроки");
 		panel.add(tfNumero, constraints);
 		
-		//=================== 4�me ligne =========================
+		//=================== 4�me ligne =========================
 		constraints.gridx = 3;
 		constraints.gridy = ++ligne;
 		constraints.gridwidth = 1;
@@ -495,7 +495,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 		constraints.ipadx = 0;
 		constraints.ipady = 0;
 		constraints.insets = new Insets(2, 2, 2, 2);
-		panel.add(new JLabel("Cat�gorie"), constraints);
+		panel.add(new JLabel("Категория"), constraints);
 
 		constraints.gridx = 4;
 		constraints.gridwidth = 3;
@@ -578,9 +578,9 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 	}
 
 	/**
-	 *  �coute les chagenement du radio button licencie
+	 *  �coute les chagenement du radio button licencie
 	 *
-	 * @param  e  l'�v�nement d�clench�
+	 * @param  e  l'�v�nement d�clench�
 	 */
 	public void rbLincencieStateChanged(ChangeEvent e)
 	{
@@ -664,7 +664,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 
 	
 	/**
-	 *  Modifie les caract�ristique d'un joueurs
+	 *  Modifie les caract�ristique d'un joueurs
 	 *
 	 * @param  e  Description of the Parameter
 	 */
@@ -699,7 +699,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 	/**
 	 *  fabrique un joueur en fonction des champs saisies et de l'ancien joueur de la liste
 	 *
-	 * @return    le joueur fabrique ou null si les champs �taient invalid
+	 * @return    le joueur fabrique ou null si les champs �taient invalid
 	 */
 	public Joueur getOldJoueur()
 	{
@@ -720,7 +720,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 			// afficher un message d'erreur
 			return null;
 		}
-		// le joueur n'est pas licenci�
+		// le joueur n'est pas licenci�
 		if (!rbLincencie.isSelected())
 		{
 			j = new Joueur(nom, prenom, isMasculin, categorie);
@@ -761,7 +761,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 	/**
 	 *  fabrique un joueur en fonction des champs saisies
 	 *
-	 * @return    le joueur fabrique ou null si les champs �taient invalid
+	 * @return    le joueur fabrique ou null si les champs �taient invalid
 	 */
 	public Joueur getJoueur()
 	{
@@ -775,7 +775,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 			// afficher un message d'erreur
 			return null;
 		}
-		// le joueur n'est pas licenci�
+		// le joueur n'est pas licenci�
 		if (!rbLincencie.isSelected())
 		{
 			j = new Joueur(nom, prenom, isMasculin, categorie);
@@ -867,7 +867,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 			File file = fileChooser.getSelectedFile();
 			try
 			{
-				// si le fichier n'existe pas on le cr�er
+				// si le fichier n'existe pas on le cr�er
 				if(!file.exists())
 				{
 					if(!file.getName().endsWith(".xml")&&!file.getName().endsWith(".XML"))
@@ -875,7 +875,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 						file = new File(file.getAbsolutePath()+".xml");
 						if(!file.createNewFile())
 						{
-							JOptionPane.showMessageDialog(this,"Erreur lors de l'enregistrement !","Erreur",JOptionPane.ERROR_MESSAGE);							
+							JOptionPane.showMessageDialog(this,"Ошибка при регистрации!","Ошибка",JOptionPane.ERROR_MESSAGE);
 						}
 					}
 				}
@@ -901,7 +901,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 
 	
 	/**
-	 *  Sauvegarde les joueurs pr�sents dans le tournois
+	 *  Sauvegarde les joueurs pr�sents dans le tournois
 	 *
 	 * @param  e  Description of the Parameter
 	 */
@@ -919,7 +919,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 			try
 			{
 				File file = fileChooser.getSelectedFile();
-				// si le fichier n'existe pas on le cr�er
+				// si le fichier n'existe pas on le cr�er
 				if(!file.exists())
 				{
 					if(!file.getName().endsWith(".xml")&&!file.getName().endsWith(".XML"))
@@ -927,7 +927,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 						file = new File(file.getAbsolutePath()+".xml");
 						if(!file.createNewFile())
 						{
-							JOptionPane.showMessageDialog(this,"Erreur lors de l'enregistrement !","Erreur",JOptionPane.ERROR_MESSAGE);							
+							JOptionPane.showMessageDialog(this,"Ошибка при регистрации!","Ошибка",JOptionPane.ERROR_MESSAGE);
 						}
 					}
 				}							
@@ -998,7 +998,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 	private void imprimerPresents(ActionEvent e)
 	{
 		PrintJob pJob = getToolkit().getPrintJob(new Frame(),
-					 "Imprimer_Joueurs_Pr�sents", null);
+					 "Printers_Available", null);
 		if(pJob==null) return;	
 		Dimension page = pJob.getPageDimension();	
 		int position = 50;
@@ -1028,7 +1028,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 	private void imprimerJoueurs(ActionEvent e)
 	{
 		PrintJob pJob = getToolkit().getPrintJob(new Frame(),
-					 "Imprimer_Joueurs", null);
+					 "Printers", null);
 		if(pJob==null) return;	
 		Dimension page = pJob.getPageDimension();	
 		int position = 50;
@@ -1111,7 +1111,7 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 	{
 		if(Character.isLetter(e.getKeyChar()))
 		{
-			// rechercher l'index du premier joueur dont le nom commence par la lettre tap�e
+			// rechercher l'index du premier joueur dont le nom commence par la lettre tap�e
 			int index = 0;
 			for(int x=0; x<tableJoueurs.getRowCount(); x++)
 			{
@@ -1133,8 +1133,8 @@ public class FormJoueur extends JInternalFrame implements Observer, TableModelLi
 
 
 	/**
-	 * modification de la comp�tition
-	 * maj des donn�es
+	 * modification de la comp�tition
+	 * maj des donn�es
 	 */
 	public void update(Observable arg0, Object arg1)
 	{
