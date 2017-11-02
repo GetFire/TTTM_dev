@@ -3,22 +3,22 @@ package tournoi;
 import java.util.*;
 
 /**
- *  Cat�gorie d'un joueur de tennis de table.
+ *  Cat�gorie d'un joueur de tennis de table.
  */
 public class Categorie implements Comparable
 {
 	/**  Description of the Field */
-	public final static String SENIOR = "S�nior";
+	public final static String SENIOR = "Сеньоры";
 	/**  Description of the Field */
-	public final static String JUNIOR = "Junior";
+	public final static String JUNIOR = "Ювеналы";
 	/**  Description of the Field */
-	public final static String VETERANT = "V�t�ran";
+	public final static String VETERANT = "Ветераны";
 	/**  Description of the Field */
-	public final static String BENJAMIN = "Benjamin";
+	public final static String BENJAMIN = "Юниоры";
 	/**  Description of the Field */
-	public final static String MINIME = "Minime";
+	public final static String MINIME = "Дети";
 	/**  Description of the Field */
-	public final static String CADET = "Cadet";
+	public final static String CADET = "Молодёж";
 
 	/**  Description of the Field */
 	public final static String tCategorie[] = {VETERANT, SENIOR, JUNIOR, CADET, MINIME, BENJAMIN};
@@ -32,7 +32,7 @@ public class Categorie implements Comparable
 	}
 	
 	/**
-	 *  Retourne la liste des cat�gories sous forme de Vector.
+	 *  Retourne la liste des cat�gories sous forme de Vector.
 	 *
 	 * @return    The catedorieList value
 	 */
@@ -51,7 +51,7 @@ public class Categorie implements Comparable
 	/**
 	 *  Constructor for the Categorie object
 	 *
-	 * @param  categorie  Cat�gorie d'�ge d'un licenci�
+	 * @param  categorie  Cat�gorie d'�ge d'un licenci�
 	 */
 	public Categorie(String categorie)
 	{

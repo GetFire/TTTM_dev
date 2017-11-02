@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
 import tournoi.exception.TournoiException;
 
 /**
- * permet d'obtenir les diff�rentes ressources de la comp�tition.
+ * permet d'obtenir les diff�rentes ressources de la comp�tition.
  */
 public class Competition extends Observable implements Observer
 {
@@ -174,10 +174,10 @@ public class Competition extends Observable implements Observer
 			tableau.setMax_joueurs(sortie.getNbJoueurs());
 			((TableauSimple)tableau).calculOrdreMatchList();
 		}
-		//==== tableau int�gral ====
+		//==== tableau int�gral ====
 		else if(TableauIntegral.TYPE.equals(sortie.getType()))
 		{		
-            logger.debug("creation d'un tableau int�gral !! ");
+            logger.debug("creation d'un tableau int�gral !! ");
 			tableau = new TableauIntegral(this);
 			tableau.setMax_joueurs(sortie.getNbJoueurs());
 			((TableauSimple)tableau).calculOrdreMatchList();
@@ -190,28 +190,28 @@ public class Competition extends Observable implements Observer
         //==== tableau poule ====
         if(TableauPoules.TYPE.equals(description.getType()))
         {
-            if(tableau==null) throw new TournoiException("Erreur lors du changement de formule");
+            if(tableau==null) throw new TournoiException("Ошибка при изменении формулы");
             if(((TableauPoules)tableau).getPoules()==null||((TableauPoules)tableau).getPoules().size()==0)
             {
-                throw new TournoiException("Le tableau doit etre lan�� pour faire le changement formule");
+                throw new TournoiException("Таблица должна быть разработана для внесения изменений");
             }
             if(((TableauPoules)tableau).getPoules().size()!=description.getNbPoules())
             {
-                throw new TournoiException("Vous devez choisir une formule avec "+((TableauPoules)tableau).getPoules().size()+" poules");
+                throw new TournoiException("Вы должны выбрать формулу с "+((TableauPoules)tableau).getPoules().size()+" пул");
             }
             ((TableauPoules)tableau).setClassementJoueurList(new ArrayList());
             ((TableauPoules)tableau).setNbJoueursParPoule(description.getNbJoueursParPoule());                              
             ((TableauPoules)tableau).getDescriptions().clear();
             ((TableauPoules)tableau).clearTableaux();
             ((TableauPoules)tableau).getTableaux().clear();
-            //== creation des tableaux pour apr�s les sorties de poules ==
+            //== creation des tableaux pour apr�s les sorties de poules ==
             int index=1;
             for (Iterator iter = description.getSortiePouleList().iterator(); iter.hasNext();)
             {
                 SortiePoule element = (SortiePoule) iter.next();
                 ((TableauPoules)tableau).addDescription(new Integer(element.getNbJoueurs()));
                 TableauSimple tableauTemp = null;
-                //== si c'est une description automatique : le tableau n'est pas r�f�renc� !
+                //== si c'est une description automatique : le tableau n'est pas r�f�renc� !
                 tableauTemp = createTableauAuto(element);
                 if(tableauTemp.getName()==null || tableauTemp.getName().equals(""))
                 {
@@ -234,7 +234,7 @@ public class Competition extends Observable implements Observer
         }
         else
         {
-            throw new TournoiException("Vous devez choisir un tableau avec poules");
+            throw new TournoiException("Вы должны выбрать стол с пулами");
         }
         ((TableauPoules)tableau).initTableaux();
         
@@ -275,7 +275,7 @@ public class Competition extends Observable implements Observer
 				((TableauSimple)tableau).ordreMatchList = (ArrayList)description.getOrdreMatchList().clone();
 			}
 		}
-		//==== tableau int�gral ====
+		//==== tableau int�gral ====
 		else if(TableauIntegral.TYPE.equals(description.getType()))
 		{		
 			tableau = new TableauIntegral(this);
@@ -298,14 +298,14 @@ public class Competition extends Observable implements Observer
 			((TableauPoules)tableau).setNbJoueursParPoule(description.getNbJoueursParPoule());								
 			//== creation des poules ==
 			((TableauPoules)tableau).createPoule(description.getNbPoules());
-			//== creation des tableaux pour apr�s les sorties de poules ==
+			//== creation des tableaux pour apr�s les sorties de poules ==
 			int index=1;
 			for (Iterator iter = description.getSortiePouleList().iterator(); iter.hasNext();)
 			{
 				SortiePoule element = (SortiePoule) iter.next();
 				((TableauPoules)tableau).addDescription(new Integer(element.getNbJoueurs()));
 				TableauSimple tableauTemp = null;
-				//== si c'est une description automatique : le tableau n'est pas r�f�renc� !
+				//== si c'est une description automatique : le tableau n'est pas r�f�renc� !
 				if(getDescription(element.getRefTableau())==null)
 				{
 					tableauTemp = createTableauAuto(element);
@@ -482,7 +482,7 @@ public class Competition extends Observable implements Observer
 			if(path==null) path = "";
 			else path=path+"/";				
 			File file = new File(path+"config/formulesAuto.xml");			
-			// si le fichier n'existe pas on le cr�er
+			// si le fichier n'existe pas on le cr�er
 			if(!file.exists())
 			{
 				if(!file.getName().endsWith(".xml")&&!file.getName().endsWith(".XML"))
@@ -575,7 +575,7 @@ public class Competition extends Observable implements Observer
 	{
 		try
 		{
-			// si le fichier n'existe pas on le cr�er
+			// si le fichier n'existe pas on le cr�er
 			if(!file.exists())
 			{
 				if(!file.getName().endsWith(".xml")&&!file.getName().endsWith(".XML"))

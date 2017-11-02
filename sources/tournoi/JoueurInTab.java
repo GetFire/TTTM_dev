@@ -44,6 +44,6 @@ public class JoueurInTab
     
     public String toString()
     {
-        return "numJoueur="+numJoueur+" numMatch="+numMatch+" numDossard"+numDossard;
+        return "номУчаст="+numJoueur+" номМатча="+numMatch+" номНагруд"+numDossard;
     }
 }

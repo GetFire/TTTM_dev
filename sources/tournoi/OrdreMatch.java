@@ -75,7 +75,7 @@ public class OrdreMatch
 	
 	public String toString()
 	{		
-		return "Match"+numMatch+" "+adversaire1+" contre "+adversaire2;
+		return "Матч "+numMatch+" "+adversaire1+" против "+adversaire2;
 	}
 
 
