@@ -104,7 +104,7 @@ public class PrintingMatch implements Printable
 		
 		double scaleW = 1.0;
 		double scaleH = 1.0;		
-		// si la taille de la derni�re poule excede la taille de la page : on redimensionne la poule
+		// si la taille de la derni�re poule excede la taille de la page : on redimensionne la poule
 		if(matchsParPage == 1)
 		{
 			match = ((PrintedMatch)printedMatchList.get(0)).getMatch();
@@ -145,15 +145,15 @@ public class PrintingMatch implements Printable
 					line+=30;
 					g.setFont(new Font("Helvetica",Font.PLAIN,20));
 				}	
-				//== impression du num�ro de table ==
+				//== impression du num�ro de table ==
 				g.setFont(new Font("Helvetica",Font.PLAIN,15));
 				String numTable = (match.getNumTable()==0)?"table ?":"table "+match.getNumTable();
 				g.drawString(numTable,0,line);
 				line+=25;
 				g.setFont(new Font("Helvetica",Font.PLAIN,20));
 				
-				g.drawString("Joueurs : ",0,line);
-				g.drawString("R�sultats : ",250,line);
+				g.drawString("Участник : ",0,line);
+				g.drawString("Результат : ",250,line);
 				line+=30;
 				g.setFont(new Font("Helvetica",Font.PLAIN,15));
 				String strJoueur1 = match.getJoueur1().toString();
@@ -186,7 +186,7 @@ public class PrintingMatch implements Printable
 				}
 				g.setFont(new Font("Helvetica",Font.ITALIC,10));
 				line = y+height+30;
-				g.drawString("Veuillez svp entourer le nom du gagnant",0,line);
+				g.drawString("Объедините имя победителя",0,line);
 				line += 50;
 			}								
 		}	

@@ -9,7 +9,7 @@ import tournoi.Joueur;
 import tournoi.OrdreMatch;
 
 /**
- *  Permet la repr�sentation des r�sultats d'un tournoi
+ *  Permet la repr�sentation des r�sultats d'un tournoi
  *
  *@author     captainpaf
  *@created    26 avril 2004
@@ -23,9 +23,9 @@ public class OrdreMatchTableModel extends AbstractTableModel
 
 
     private String[] columnNames = {
-			"Match n�",
-			"Adversaire 1",
-			"Adversaire 2"};
+			"Партия №",
+			"Соперник 1",
+			"Соперник 2"};
 
 	
 	private ArrayList datas = null;
@@ -124,7 +124,7 @@ public class OrdreMatchTableModel extends AbstractTableModel
 		OrdreMatch ordreMatch = (OrdreMatch)datas.get(row);
 		switch(col)
 		{			
-			case 0 : // match n�			
+			case 0 : // match n�			
 				return ""+(ordreMatch.getNumMatch());
 			case 1 : // adversaire 1
 				return ""+ordreMatch.getAdversaire1();

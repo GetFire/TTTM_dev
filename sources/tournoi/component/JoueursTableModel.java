@@ -8,7 +8,7 @@ import javax.swing.table.AbstractTableModel;
 import tournoi.Joueur;
 
 /**
- *  Permet la repr�sentation des r�sultats d'un tournoi
+ *  Permet la repr�sentation des r�sultats d'un tournoi
  *
  *@author     captainpaf
  *@created    26 avril 2004
@@ -23,14 +23,14 @@ public class JoueursTableModel extends AbstractTableModel
 
 
     private String[] columnNames = {
-			"Nom",
-			"Pr�nom",
-			"Classement",
-			"Cat�gorie",
-			"Sexe",
-			"Club",
-			"Pr�sent",
-			"Participation"};
+			"Имя",
+			"Фамилия",
+			"Класс",
+			"Категория",
+			"Пол",
+			"Клуб",
+			"Присутствует",
+			"Участие"};
 	
 	
 			
@@ -97,7 +97,7 @@ public class JoueursTableModel extends AbstractTableModel
 	}
 
 	/**
-	 * permet de modifier les donn�e de la table
+	 * permet de modifier les donn�e de la table
 	 * @param joueurs la liste des joueurs du vainqueur au dernier
 	 */
 	public void setJoueurs(ArrayList joueurs)
@@ -158,18 +158,18 @@ public class JoueursTableModel extends AbstractTableModel
 			case 0 : // Nom
 				
 				return joueur.getNom();
-			case 1 : // Pr�nom
+			case 1 : // Pr�nom
 				return joueur.getPrenom();
 			case 2 : // Classement			
 				return joueur.getStrOldClassement();
-			case 3 : // Cat�gorie
+			case 3 : // Cat�gorie
 				return joueur.getCategorie().toString().substring(0, 1).toUpperCase();
 			case 4 : // Sex
 				String sex = joueur.isMasculin()?"M":"F";
 				return sex;
 			case 5 : // Club				
 				return joueur.getClub();				
-			case 6 : // Pr�sent				
+			case 6 : // Pr�sent				
 				return new Boolean(joueur.isHere());
 			case 7 : // Partitipation				
 				return new Integer(joueur.getNbParticipation());				
