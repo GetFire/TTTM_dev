@@ -11,24 +11,27 @@
 
     <build>
         <plugins>
+
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
+                <groupId>com.jolira</groupId>
+                <artifactId>onejar-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>copy-dependencies</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
                         <configuration>
-                            <outputDirectory>
-                                ${project.build.directory}/libs
-                            </outputDirectory>
+                            <mainClass>org.baeldung.executable.
+                                ExecutableMavenJar</mainClass>
+                            <attachToBuild>true</attachToBuild>
+                            <filename>
+                                ${project.build.finalName}.${project.packaging}
+                            </filename>
                         </configuration>
+                        <goals>
+                            <goal>one-jar</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
