@@ -191,7 +191,7 @@ public class FormDesktop extends JFrame
 	
 	JCheckBoxMenuItem menuTournoi = new JCheckBoxMenuItem("Окно турниров",false);
 		menuJoueur.getAccessibleContext().setAccessibleDescription(
-			"Affiche ou cache la fen�tre des tournois");
+			"Показать или скрыть окно турнира");
 		menuTournoi.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -261,14 +261,14 @@ public class FormDesktop extends JFrame
 	/**  Constructor for the FormMain object */
 	public FormDesktop(Competition competition)
 	{
-		super("Tennis de Table Tournois Manager");
+		super("Менеджер турниров по настольному теннису");
 		
 		desktop = new JDesktopPane();
 	    desktop.setBackground(new Color(155,169,202));
 		//desktop.setBackground(new Color(182,162,207));
 		this.competition = competition;
 		//==== gestion de la sauvegarde automatique ===
-		int time = configuration.getIntProperty("timer", 5, "sauvegarde");
+		int time = configuration.getIntProperty("таймер", 5, "сохранить");
 		timer = new Timer(time*60*1000,new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				saveCompetition();
@@ -290,8 +290,8 @@ public class FormDesktop extends JFrame
 				{
 					int result = JOptionPane.showConfirmDialog(
 						null,
-						"Quitter l'application ?",
-						"Attention",
+						"Выйти из приложения?",
+						"Внимание",
 						JOptionPane.YES_NO_OPTION);
 					if(result==JOptionPane.YES_OPTION)
 					{
@@ -411,18 +411,18 @@ public class FormDesktop extends JFrame
 						file = new File(file.getAbsolutePath()+".xml");
 						if(!file.createNewFile())
 						{
-							JOptionPane.showMessageDialog(this,"Erreur lors de l'enregistrement !","Erreur",JOptionPane.ERROR_MESSAGE);							
+							JOptionPane.showMessageDialog(this,"Ошибка при регистрации!","Ошибка",JOptionPane.ERROR_MESSAGE);
 						}
 					}
 				}
 				if(!competition.save(file))
 				{
-					JOptionPane.showMessageDialog(this,"Erreur lors de la sauvegarde","Erreur", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(this,"Ошибка при резервном копировании","Ошибка", JOptionPane.ERROR_MESSAGE);
 				}
 			}	
 			catch(Exception exp)
 			{			
-				JOptionPane.showMessageDialog(this,"Erreur lors de la sauvegarde","Erreur", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this,"Ошибка при резервном копировании","Ошибка", JOptionPane.ERROR_MESSAGE);
 			}
 						
 		}		

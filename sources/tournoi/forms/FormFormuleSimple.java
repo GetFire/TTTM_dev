@@ -186,7 +186,7 @@ public class FormFormuleSimple extends JInternalFrame
 	private javax.swing.JLabel getJLabel() {
 		if(lblFormules == null) {
 			lblFormules = new javax.swing.JLabel();
-			lblFormules.setText("Liste des formules :");
+			lblFormules.setText("Список формул :");
 			lblFormules.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 			lblFormules.setName("");
 			lblFormules.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -203,7 +203,7 @@ public class FormFormuleSimple extends JInternalFrame
 		if(jList == null) {
 			jList = new javax.swing.JList();
 			jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-			jList.setToolTipText("Liste des formules disponibles");
+			jList.setToolTipText("Список доступных формул");
 			jList.setVisibleRowCount(10);
 		}
 		return jList;
@@ -216,7 +216,7 @@ public class FormFormuleSimple extends JInternalFrame
 	private javax.swing.JLabel getJLabel1() {
 		if(lblNom == null) {
 			lblNom = new javax.swing.JLabel();
-			lblNom.setText("Nom de la formule :");
+			lblNom.setText("Название формулы :");
 		}
 		return lblNom;
 	}
@@ -262,7 +262,7 @@ public class FormFormuleSimple extends JInternalFrame
 	private javax.swing.JLabel getLblMin() {
 		if(lblMin == null) {
 			lblMin = new javax.swing.JLabel();
-			lblMin.setText("Nombre de joueurs minimum :");
+			lblMin.setText("Количество игроков минимум :");
 		}
 		return lblMin;
 	}
@@ -319,7 +319,7 @@ public class FormFormuleSimple extends JInternalFrame
 	private javax.swing.JLabel getJLabel3() {
 		if(jLabel == null) {
 			jLabel = new javax.swing.JLabel();
-			jLabel.setText("Ordre des matchs :");
+			jLabel.setText("Порядок сортировки :");
 		}
 		return jLabel;
 	}
@@ -347,7 +347,7 @@ public class FormFormuleSimple extends JInternalFrame
 		if(bAjouter==null)
 		{
 			bAjouter = new javax.swing.JButton();
-			bAjouter.setText("Ajouter");
+			bAjouter.setText("Добавить");
 		}
 		return bAjouter;
 	}
@@ -357,7 +357,7 @@ public class FormFormuleSimple extends JInternalFrame
 		if(bModifier==null)
 		{
 			bModifier = new javax.swing.JButton();
-			bModifier.setText("Modifier");
+			bModifier.setText("Изменить");
 		}
 		return bModifier;
 	}
@@ -367,7 +367,7 @@ public class FormFormuleSimple extends JInternalFrame
 		if(bSupprimer==null)
 		{
 			bSupprimer = new javax.swing.JButton();
-			bSupprimer.setText("Supprimer");
+			bSupprimer.setText("Удалить");
 		}
 		return bSupprimer;
 	}
@@ -381,7 +381,7 @@ public class FormFormuleSimple extends JInternalFrame
 	private javax.swing.JButton getBAjouterLigne() {
 		if(bAjouterLigne == null) {
 			bAjouterLigne = new javax.swing.JButton();
-			bAjouterLigne.setText("Ajouter Ligne");
+			bAjouterLigne.setText("Добавить строку");
 			bAjouterLigne.addActionListener(new ActionListener()
 			{
 				public void actionPerformed(ActionEvent e)

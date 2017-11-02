@@ -43,7 +43,7 @@ public class FormDisplayTables extends JInternalFrame implements Observer
 	private javax.swing.JButton down = null;
 	private javax.swing.JButton up = null;
 	private javax.swing.JLabel jLabel = null;
-    private JLabel lblNbTables = new JLabel("Nombre de tables : ");
+    private JLabel lblNbTables = new JLabel("Количество таблиц : ");
     private JTextField tfNbTables = new JTextField(new ControledDocument(5, false, true), "16", 4);
     
 	private Competition competition = null; 
@@ -55,7 +55,7 @@ public class FormDisplayTables extends JInternalFrame implements Observer
 	 */
 	public FormDisplayTables(Competition competition)
 	{
-		super("gestion des tables");
+		super("управление таблицей");
 		this.competition = competition;
 		competition.addObserver(this);
 		initialize();
@@ -211,7 +211,7 @@ public class FormDisplayTables extends JInternalFrame implements Observer
 	private javax.swing.JLabel getJLabel() {
 		if(jLabel == null) {
 			jLabel = new javax.swing.JLabel();
-			jLabel.setText("Tables Libres :");
+			jLabel.setText("Бесплатные таблицы :");
 		}
 		return jLabel;
 	}

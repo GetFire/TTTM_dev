@@ -104,7 +104,7 @@ public class FormDisplayResultat extends JInternalFrame implements Printable
 		if (bPrint == null)
 		{
 			bPrint = new javax.swing.JButton();
-			bPrint.setText("Imprimer");
+			bPrint.setText("Печать");
 		}
 		return bPrint;
 	}

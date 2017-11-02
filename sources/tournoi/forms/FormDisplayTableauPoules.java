@@ -20,7 +20,7 @@ import tournoi.component.*;
 import tournoi.exception.TournoiException;
 
 /**
- * La fen�tre qui affiche les tableau avec poules.
+ * La fen�tre qui affiche les tableau avec poules.
  */
 public class FormDisplayTableauPoules extends JInternalFrame implements Observer, MouseListener
 {
@@ -35,8 +35,8 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 	private boolean tableauxIsStarted = false;
 	private boolean tableauxIsCompleted = false;
 	private JButton bPrintPoules = new JButton("Imprimer les poules");
-	private JButton bGenererTableau = new JButton("Voir Tableau(x)");
-    private JButton bUpdateFormule = new JButton("Changer la formule");
+	private JButton bGenererTableau = new JButton("См. Таблицу (x)");
+    private JButton bUpdateFormule = new JButton("Измените формулу");
 	private JPanel panelPoules = null;
 	private PanelPoule panelPoule = null; 
 	private JPanel containPoule = null;
@@ -81,8 +81,8 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 		JPanel panelTab = new JPanel(new BorderLayout());		
 		JPanel panelGrid = new JPanel(new GridLayout(1,2));
 			
-		JButton print = new JButton("Imprimer les matchs");
-		JButton printAll = new JButton("Imprimer le tableau");
+		JButton print = new JButton("Печатные матчи");
+		JButton printAll = new JButton("Печать таблицы");
 		panelGrid.add(print);
 		panelGrid.add(printAll);
 			
@@ -118,7 +118,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 	public void tableauMatchCliked(JNode node)
 	{			
 		FormMatch fMatch = new FormMatch(node.getMatch());
-		tab.add("Match", fMatch);
+		tab.add("Матч", fMatch);
 		fMatch.show();
 	}
 	
@@ -166,8 +166,8 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
         constraints.anchor = GridBagConstraints.WEST;
         panel.add(bUpdateFormule, constraints);
         bPrintPoules.setToolTipText("Imprime toutes les poules du tableau.");
-        bUpdateFormule.setToolTipText("Change la formule de ce tableau.");
-        bGenererTableau.setToolTipText("Affiche les tableaux � la fin des poules.");
+        bUpdateFormule.setToolTipText("Измените формулу в этой таблице.");
+        bGenererTableau.setToolTipText("Покажите таблицы в конце куры.");
 		return panel;
 	}
 	
@@ -205,7 +205,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 	}
 	
 	/**
-	 * constructeur par d�faut
+	 * constructeur par d�faut
 	 * @param tableau le tableau a afficher
 	 */
 	public FormDisplayTableauPoules(Competition competition, TableauPoules tableau)
@@ -289,7 +289,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 	
 	private boolean allPoulesAreTerminated()
 	{
-		//== toutes les poules sont termin�es ? ==		
+		//== toutes les poules sont termin�es ? ==		
 		for (Iterator iter = tableau.getPoules().iterator(); iter.hasNext();)
 		{			
 			Poule poule = (Poule) iter.next();
@@ -303,7 +303,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 	
 	public void genererTableau()
 	{
-		//== toutes les poules sont termin�es ? ==
+		//== toutes les poules sont termin�es ? ==
 		if(!allPoulesAreTerminated())		
 		{
 			if(tableauxIsCompleted)
@@ -329,7 +329,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 	
 	public void tabStateChanged(ChangeEvent changeEvent)
 	{
-		//== toutes les poules sont termin�es ? ==
+		//== toutes les poules sont termin�es ? ==
 		if(!allPoulesAreTerminated())		
 		{
 			if(tableauxIsCompleted)
@@ -379,7 +379,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 	}
 
 	/**
-	 * impression des matchs s�lectionn�s
+	 * impression des matchs s�lectionn�s
 	 * @param arg0
 	 */
 	public void printClicked(ActionEvent arg0)
@@ -405,7 +405,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 		catch(Exception e)
 		{
 			logger.error(e);
-			JOptionPane.showMessageDialog(this,"Erreur lors de l'impression : "+e.getMessage(),"Erreur",JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this,"Ошибка при печати: "+e.getMessage(),"Ошибка",JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	
@@ -435,7 +435,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
     public void updateFormule(ActionEvent arg0)
     {
         Object[] formules = competition.getFormulesAuto().toArray();
-        DescriptionTableau desc = (DescriptionTableau)JOptionPane.showInputDialog(getContentPane(),"Nouvelle formule : ","Changement de formule",JOptionPane.QUESTION_MESSAGE,null,formules,null);
+        DescriptionTableau desc = (DescriptionTableau)JOptionPane.showInputDialog(getContentPane(),"Новая формула : ","Изменение формулы",JOptionPane.QUESTION_MESSAGE,null,formules,null);
         if(desc!=null)
         {
             try
@@ -455,7 +455,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
             }
             catch(TournoiException exp)
             {
-                JOptionPane.showMessageDialog(getContentPane(),exp.getMessage(),"erreur",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(getContentPane(),exp.getMessage(),"Ошибка",JOptionPane.ERROR_MESSAGE);
                 return;
             }         
         }
@@ -480,7 +480,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 		{
 			e.printStackTrace();
 			logger.error(e);
-			JOptionPane.showMessageDialog(this,"Erreur lors de l'impression : "+e.getMessage(),"Erreur",JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this,"Ошибка при печати: "+e.getMessage(),"Ошибка",JOptionPane.ERROR_MESSAGE);
 		}
 	}
 		
@@ -491,7 +491,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
 			tableauxAndResultat.hideResultat((TableauSimple)arg0);
 			tableauxAndResultat.showResultat((TableauSimple)arg0);
 			tab.add(tableauxAndResultat.getFrameResultat((TableauSimple)arg0),tab.getTabCount());
-			tab.setTitleAt(tab.getTabCount()-1,"Resultat "+((TableauSimple)arg0).getName());
+			tab.setTitleAt(tab.getTabCount()-1,"Результат "+((TableauSimple)arg0).getName());
 			
 		}
 		else
@@ -572,7 +572,7 @@ public class FormDisplayTableauPoules extends JInternalFrame implements Observer
    
     
 	/**
-	 * permet de retrouver la frame servant � afficher un tableau
+	 * permet de retrouver la frame servant � afficher un tableau
 	 *
 	 */
 	private class TableauxAndFrame

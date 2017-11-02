@@ -14,7 +14,7 @@ import tournoi.*;
 import tournoi.component.*;
 
 /**
- * La fen�tre qui affiche les tableau sans poule.
+ * La fen�tre qui affiche les tableau sans poule.
  */
 
 public class FormDisplayTableauSimple extends JInternalFrame implements Observer
@@ -28,15 +28,15 @@ public class FormDisplayTableauSimple extends JInternalFrame implements Observer
 	private TableauSimple tableau = null;	
 	private JTabbedPane tab = new JTabbedPane();
 	private JTableau jTournoi = null;
-	private JButton print = new JButton("Imprimer les matchs");
-	private JButton printAll = new JButton("Imprimer le tableau"); 
+	private JButton print = new JButton("Печатные матчи");
+	private JButton printAll = new JButton("Печать таблицы");
 	
 	private FormDisplayResultat fResultat = null;
 	
 	private boolean resultatIsShowing = false;
 	
 	/**
-	 * constructeur par d�faut
+	 * constructeur par d�faut
 	 * @param tableau le tableau a afficher
 	 */
 	public FormDisplayTableauSimple(TableauSimple tableau)
@@ -114,7 +114,7 @@ public class FormDisplayTableauSimple extends JInternalFrame implements Observer
 	}
 	
 	/**
-	 * impression des matchs s�lectionn�s
+	 * impression des matchs s�lectionn�s
 	 * @param arg0
 	 */
 	public void printClicked(ActionEvent arg0)
@@ -138,7 +138,7 @@ public class FormDisplayTableauSimple extends JInternalFrame implements Observer
 		}
 		catch(Exception e)
 		{
-			JOptionPane.showMessageDialog(this,"Erreur lors de l'impression : "+e.getMessage(),"Erreur",JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this,"Ошибка при печати : "+e.getMessage(),"Ошибка",JOptionPane.ERROR_MESSAGE);
 			logger.error(e);
 		}
 	}
@@ -185,7 +185,7 @@ public class FormDisplayTableauSimple extends JInternalFrame implements Observer
 			{
 				resultatIsShowing=true;
 				fResultat = new FormDisplayResultat(tableau.getResultats(),"");
-				tab.add("Resultat", fResultat);				
+				tab.add("Результат", fResultat);
 				fResultat.show();
 
 			}			
