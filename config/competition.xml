@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='no' ?>    
+<!-- fichier competition.xml --> 
+<!DOCTYPE competition SYSTEM "competition.dtd"[
+]> 
+<competition nombre_tables="16">
+  <tableau_simple nom="tab4KO" max_joueurs="4" type="KO" visible="non">   
+    <deroulement>
+      <ordre_match>
+        <match numero="1" adversaire1="1" adversaire2="4"/>
+        <match numero="2" adversaire1="2" adversaire2="3"/>
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_poules nom="tab32DoubleKOPoule4" visible="non">
+    <poules nombre="8" nombre_joueurs="4" />
+    <sortie_poule nombre_joueurs="4" ref_tableau="tab4KO" nom_tableau="principal"/>
+  </tableau_poules>
+</competition>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<properties>
+  <variables>
+    <variable name="my.path" value="/home/foo/data"/>
+  </variables>
+  <category name="sauvegarde">
+    <property name="timer" value="1"/>
+    <property name="file" value="sauvegarde.xml"/>
+  </category>
+  <category name="design">
+    <property name="node_height" value="35"/>
+    <property name="node_width" value="125"/>
+    <property name="node_HSpace" value="10"/>
+    <property name="node_VSpace" value="5"/>            
+  </category>  
+</properties>

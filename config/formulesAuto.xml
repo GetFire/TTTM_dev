@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_04" class="java.beans.XMLDecoder"> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>6-8_2P(nINT) 2t-3:20</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>2</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_INTEGRAL</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>9-12_3P(nINT) 3t-4:20</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>3</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_INTEGRAL</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>12-16_4P(nKo) 4t-3:40</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>4</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>12-16_4P(nDKo) 4t-4:00</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>4</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_DOUBLE_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>12-16_4P(nINT) 4t-4:40</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>4</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_INTEGRAL</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>12-16_4P(16Ko) 4t-4:40</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>4</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="nbJoueurs"> 
+      <int>16</int> 
+     </void> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>17-20_5P(nKo) 5t-4:00</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>5</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>17-20_5P(nINT) 5t-4:40</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>5</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_INTEGRAL</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>18-24_6P(nInt) 8t-4:20</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>6</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_INTEGRAL</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>18-24_6P(nKo) 6t-4:00</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>6</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>24-32_8P(nKo) 8t-4:00</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>8</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>24-32_8P(nDKo) 8t-4:20</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>8</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_DOUBLE_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>24-32_8P(16Ko-nKo) 8t-3:40</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>8</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="nbJoueurs"> 
+      <int>16</int> 
+     </void> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="refTableau"> 
+      <string>Tableau 2</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+ <object class="tournoi.DescriptionTableau"> 
+  <void property="identifiant"> 
+   <string>24-40_8P(16Ko-16Ko) 8t-3:40</string> 
+  </void> 
+  <void property="nbPoules"> 
+   <int>8</int> 
+  </void> 
+  <void property="ordreMatchAuto"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="sortiePouleList"> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="nbJoueurs"> 
+      <int>16</int> 
+     </void> 
+     <void property="refTableau"> 
+      <string>Tableau 1</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="tournoi.SortiePoule"> 
+     <void property="nbJoueurs"> 
+      <int>16</int> 
+     </void> 
+     <void property="refTableau"> 
+      <string>Tableau 2</string> 
+     </void> 
+     <void property="type"> 
+      <string>TABLEAU_KO</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="type"> 
+   <string>TABLEAU_POULE</string> 
+  </void> 
+ </object> 
+</java> 

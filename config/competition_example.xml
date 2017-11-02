@@ -1,0 +1,280 @@
+  <tableau_simple nom="tab4KO" max_joueurs="4" type="KO" visible="non">   
+    <deroulement>
+      <ordre_match>
+        <match numero="1" adversaire1="1" adversaire2="4"/>
+        <match numero="2" adversaire1="2" adversaire2="3"/>
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_simple nom="tab256KO" max_joueurs="256" type="KO" visible="oui">   
+  </tableau_simple>
+  <tableau_simple nom="tab64KO2" max_joueurs="64" type="KO" visible="oui">   
+  </tableau_simple>
+
+  <tableau_simple nom="tab4DKO" max_joueurs="4" type="doubleKO" visible="non">   
+    <deroulement>
+      <ordre_match>
+        <match numero="1" adversaire1="1" adversaire2="4"/>
+        <match numero="2" adversaire1="2" adversaire2="3"/>
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_simple nom="tab4Integral" max_joueurs="4" type="intégrale" visible="non">   
+    <deroulement>
+      <ordre_match>
+        <match numero="1" adversaire1="1" adversaire2="4"/>
+        <match numero="2" adversaire1="2" adversaire2="3"/>
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_simple nom="tab8KO" max_joueurs="8" type="KO" visible="non">   
+    <deroulement>
+      <ordre_match>
+        <match numero="1" adversaire1="1" adversaire2="8"/>
+        <match numero="2" adversaire1="4" adversaire2="5"/>
+        <match numero="3" adversaire1="3" adversaire2="6"/>
+        <match numero="4" adversaire1="2" adversaire2="7"/>
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_simple nom="tab8DoubleKO" max_joueurs="8" type="doubleKO" visible="non">   
+    <deroulement>
+      <ordre_match>
+        <match numero="1" adversaire1="1" adversaire2="8"/>
+        <match numero="2" adversaire1="5" adversaire2="4"/>
+        <match numero="3" adversaire1="3" adversaire2="6"/>
+        <match numero="4" adversaire1="7" adversaire2="2"/>
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>   
+  <tableau_simple nom="tab8Integral" max_joueurs="8" type="intégrale" visible="oui">   
+  </tableau_simple>   
+<tableau_simple nom="tab16KO" max_joueurs="16" type="KO" visible="oui">   
+   <deroulement>
+      <ordre_match>
+      	&match16;
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+<tableau_simple nom="tab16KO2" max_joueurs="16" type="KO" visible="oui">   
+  </tableau_simple>
+
+
+  <tableau_simple nom="tab16DoubleKO" max_joueurs="16" type="doubleKO" visible="non">   
+    <deroulement>
+      <ordre_match>
+      	&match16;
+      </ordre_match>
+    </deroulement>
+  </tableau_simple> 
+  <tableau_simple nom="tab16Integral" max_joueurs="16" type="intégrale" visible="oui">   
+    <deroulement>
+      <ordre_match>
+      	&match16;
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>  
+  <tableau_simple nom="tab32KO" max_joueurs="32" type="KO" visible="non">   
+    <deroulement>
+      <ordre_match>
+      	&match32;      
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_simple nom="tab32DoubleKO" max_joueurs="32" type="doubleKO" visible="non">   
+    <deroulement>
+      <ordre_match>
+      	&match32;      
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_simple nom="tab32Integral" max_joueurs="32" type="intégrale" visible="non">   
+    <deroulement>
+      <ordre_match>
+      	&match32;      
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>  
+  <tableau_simple nom="tab64KO" max_joueurs="64" type="KO" visible="non">   
+    <deroulement>
+      <ordre_match>
+      	&match64;      
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_simple nom="tab64DoubleKO" max_joueurs="64" type="doubleKO" visible="non">   
+    <deroulement>
+      <ordre_match>
+      	&match64;      
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>
+  <tableau_simple nom="tab64Integral" max_joueurs="64" type="intégrale" visible="non">   
+    <deroulement>
+      <ordre_match>
+      	&match64;      
+      </ordre_match>
+    </deroulement>
+  </tableau_simple>    
+  <tableau_poules nom="tab32KO-Poule4-2tab16KO" visible="non">
+    <poules nombre="8" nombre_joueurs="4" />
+    &poules8x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="principal"/>
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="consolante"/>
+  </tableau_poules>  
+  <tableau_poules nom="tab32DoubleKOPoule4" visible="non">
+    <poules nombre="8" nombre_joueurs="4" />
+    &poules8x4;
+    <sortie_poule nombre_joueurs="32" ref_tableau="tab32DoubleKO" nom_tableau="principal"/>
+  </tableau_poules>
+  <tableau_poules nom="tab24DoubleKOPoule4" visible="oui">
+    <poules nombre="8" nombre_joueurs="3" />
+    &poules8x3;
+    <sortie_poule nombre_joueurs="24" ref_tableau="tab32DoubleKO" nom_tableau="principal"/>
+  </tableau_poules>    
+  <tableau_poules nom="tab16DoubleKOPoule4" visible="non">
+    <poules nombre="4" nombre_joueurs="4" />
+    &poules4x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16DoubleKO" nom_tableau="principal"/>
+  </tableau_poules>    
+  <tableau_poules nom="tabIntégrale4Poule4" visible="non">
+    <poules nombre="4" nombre_joueurs="4" />
+    &poules4x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16Integral" nom_tableau="principal"/>
+  </tableau_poules>    
+  <tableau_poules nom="tableau64-poules4" visible="non">
+    <poules nombre="16" nombre_joueurs="4" />
+    <sortie_poule nombre_joueurs="32" ref_tableau="tab32KO" nom_tableau="Tableau A"/>
+    <sortie_poule nombre_joueurs="32" ref_tableau="tab32KO" nom_tableau="Tableau B"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:7-8_DoubleKO">
+    <poules nombre="2" nombre_joueurs="4" />
+    <sortie_poule nombre_joueurs="8" ref_tableau="tab8DoubleKO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:7-8_KO">
+    <poules nombre="2" nombre_joueurs="4" />
+    <sortie_poule nombre_joueurs="8" ref_tableau="tab8KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:9-10_2P5_16KO">
+    <poules nombre="2" nombre_joueurs="5" />
+    <sortie_poule nombre_joueurs="10" ref_tableau="tab16KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:9-10_3P4_16KO">
+    <poules nombre="3" nombre_joueurs="4" />
+	&poules3x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:11-12_3P4_16DoubleKO">
+    <poules nombre="3" nombre_joueurs="4" />
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16DoubleKO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:12-16_4P4_16KO">
+    <poules nombre="4" nombre_joueurs="4" />
+	&poules4x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:12-16_4P4_16DoubleKO">
+    <poules nombre="4" nombre_joueurs="4" />
+	&poules4x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16DoubleKO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:12-16_4P4_16Integral">
+    <poules nombre="4" nombre_joueurs="4" />
+	&poules4x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16Integral" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:17-20_4P5_32KO">
+    <poules nombre="4" nombre_joueurs="5" />
+	&poules4x5;
+    <sortie_poule nombre_joueurs="20" ref_tableau="tab32KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:24_1tab8DKO_1tab16DKO">
+    <poules nombre="8" nombre_joueurs="3" />
+     &poules8x3;
+    <sortie_poule nombre_joueurs="8" ref_tableau="tab8DoubleKO" nom_tableau="Tableau A"/>
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16DoubleKO" nom_tableau="Tableau B"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:24_1tab32DKO">
+    <poules nombre="8" nombre_joueurs="3" />
+     &poules8x3;
+    <sortie_poule nombre_joueurs="24" ref_tableau="tab32DoubleKO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:24_1tab32Integral">
+    <poules nombre="8" nombre_joueurs="3" />
+     &poules8x3;
+    <sortie_poule nombre_joueurs="24" ref_tableau="tab32Integral" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:Test_24_1tab32Integral">
+    <poules nombre="8" nombre_joueurs="3" />
+    <sortie_poule nombre_joueurs="24" ref_tableau="tab32Integral" nom_tableau="Tableau A"/>
+  </tableau_poules>
+
+  <tableau_poules nom="Tab:25-32_8P4_32DoubleKO">
+    <poules nombre="8" nombre_joueurs="4" />
+     &poules8x4;
+    <sortie_poule nombre_joueurs="32" ref_tableau="tab32DoubleKO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:25-32_8P4_2Tabs16KO">
+    <poules nombre="8" nombre_joueurs="4" />
+     &poules8x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="Tableau A"/>
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="Tableau B"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:25-32_8P4_32KO">
+    <poules nombre="8" nombre_joueurs="4" />
+     &poules8x4;
+    <sortie_poule nombre_joueurs="32" ref_tableau="tab32KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:33-40_8P5_1tab64KO">
+    <poules nombre="8" nombre_joueurs="5" />
+     &poules8x5;
+    <sortie_poule nombre_joueurs="64" ref_tableau="tab64KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:33-40_8P5_1tab16DKO_1tab32KO">
+    <poules nombre="8" nombre_joueurs="5" />
+     &poules8x5;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16DoubleKO" nom_tableau="Tableau A"/>
+    <sortie_poule nombre_joueurs="32" ref_tableau="tab32KO" nom_tableau="Tableau B"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:6">
+    <poules nombre="2" nombre_joueurs="3" />
+    <sortie_poule nombre_joueurs="8" ref_tableau="tab8DoubleKO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab:Test">
+    <poules nombre="2" nombre_joueurs="4" />
+    <sortie_poule nombre_joueurs="8" ref_tableau="tab8Integral" nom_tableau="Tableau A"/>
+  </tableau_poules>
+
+  <tableau_poules nom="Tab:5">
+    <poules nombre="1" nombre_joueurs="5" />
+    <sortie_poule nombre_joueurs="8" ref_tableau="tab8KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+
+  <tableau_poules nom="Tab16_Description">
+    <poules nombre="4" nombre_joueurs="4" />
+	&poules4x4;
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="Tab16_SansDescription">
+    <poules nombre="4" nombre_joueurs="4" />
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+
+  <tableau_poules nom="Tab16_SansDescription_3P4">
+    <poules nombre="3" nombre_joueurs="4" />
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+
+  <tableau_poules nom="Tab32_SansDescription">
+    <poules nombre="4" nombre_joueurs="5" />
+    <sortie_poule nombre_joueurs="32" ref_tableau="tab32KO" nom_tableau="Tableau A"/>
+  </tableau_poules>
+
+  <tableau_poules nom="Tab64_SansDescription">
+    <poules nombre="8" nombre_joueurs="5" />
+    <sortie_poule nombre_joueurs="64" ref_tableau="tab64KO2" nom_tableau="Tableau A"/>
+  </tableau_poules>
+  <tableau_poules nom="TabTEST25">
+    <poules nombre="2" nombre_joueurs="5" />
+    <sortie_poule nombre_joueurs="16" ref_tableau="tab16KO2" nom_tableau="Tableau A"/>
+  </tableau_poules>

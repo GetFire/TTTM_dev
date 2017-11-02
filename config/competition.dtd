@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<!ELEMENT competition (tableau_simple+, tableau_poules+) >
+<!ATTLIST competition
+   nombre_tables CDATA #REQUIRED   
+>
+<!ELEMENT tableau_simple (deroulement*) >
+<!ATTLIST tableau_simple
+   nom ID #REQUIRED
+   type (KO|doubleKO|intégrale) #REQUIRED
+   max_joueurs CDATA #REQUIRED
+   min_joueurs CDATA "1"
+   visible (oui|non) "oui"
+>
+<!ELEMENT deroulement (ordre_match)>
+<!ELEMENT ordre_match (match+)>
+<!ELEMENT match EMPTY>
+<!ATTLIST match
+   numero CDATA #REQUIRED
+   adversaire1 CDATA #REQUIRED
+   adversaire2 CDATA #REQUIRED
+>
+<!ELEMENT tableau_poules (poules, classement_poules*, sortie_poule+) >
+<!ATTLIST tableau_poules
+   nom ID #REQUIRED
+   visible (oui|non) "oui"
+>
+<!ELEMENT poules EMPTY>
+<!ATTLIST poules
+   nombre CDATA #REQUIRED
+   nombre_joueurs CDATA #REQUIRED
+>
+<!ELEMENT classement_poules EMPTY>
+<!ATTLIST classement_poules
+   poule CDATA #REQUIRED
+   joueur CDATA #REQUIRED
+   classement CDATA #REQUIRED
+>
+<!ELEMENT sortie_poule EMPTY>
+<!ATTLIST sortie_poule   
+   nombre_joueurs CDATA #REQUIRED   
+   ref_tableau IDREF #REQUIRED
+   nom_tableau CDATA #REQUIRED
+>
+
+

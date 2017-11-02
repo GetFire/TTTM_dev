@@ -1,0 +1,1 @@
+javaw -classpath lib/log4j-1.2.8.jar;lib/crimson.jar;lib/jaxp.jar;lib/myUtils.jar;lib/jconfig.jar;lib/sax.jar;lib/jmxri.jar;jar/tournoi.jar tournoi.xml.XMLAnalyzer
