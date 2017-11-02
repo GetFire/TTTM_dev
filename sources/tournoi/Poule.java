@@ -116,8 +116,8 @@ public class Poule extends Observable implements MatchListener
 	}
 
 	/**
-	 * donne les performances des joueurs passée en paramètre.
-	 * @return null si la poule n'est pas terminée
+	 * donne les performances des joueurs passï¿½e en paramï¿½tre.
+	 * @return null si la poule n'est pas terminï¿½e
 	 */
 	private ArrayList getPerformances(ArrayList joueurs)
 	{
@@ -224,7 +224,7 @@ public class Poule extends Observable implements MatchListener
 
 	/**
 	 * trie une liste de joueurs selon leurs performances
-	 * @param joueurs les joueurs à trier
+	 * @param joueurs les joueurs ï¿½ trier
 	 * @param performances leurs performances
 	 */
 	private void trie(ArrayList joueurs, ArrayList performances)
@@ -238,15 +238,15 @@ public class Poule extends Observable implements MatchListener
 	}
 
 	/**
-	 * permet de départager les joueurs dans une poule
-	 * @param joueurs les joueurs à départager
-	 * @param average la profondeur du départage
+	 * permet de dï¿½partager les joueurs dans une poule
+	 * @param joueurs les joueurs ï¿½ dï¿½partager
+	 * @param average la profondeur du dï¿½partage
 	 */
 	private void departageJoueurs(ArrayList joueurs, int average)
 	{
 		if (joueurs == null || joueurs.size() <= 1)
 			return;
-		// 2 joueurs à départager ??
+		// 2 joueurs ï¿½ dï¿½partager ??
 		if (joueurs.size() == 2)
 		{
 			if (!getWinner((Joueur) joueurs.get(0), (Joueur) joueurs.get(1)))
@@ -259,17 +259,17 @@ public class Poule extends Observable implements MatchListener
 			}
 			return;
 		}
-		// + de 2 joueurs ça se complique ;)
+		// + de 2 joueurs ï¿½a se complique ;)
 		ArrayList perfListe = getPerformances(joueurs);
 		Collections.sort(perfListe, Collections.reverseOrder());
 		trie(joueurs, perfListe);
-		//=== les joueurs sont 'ils déja départagés ? ===
+		//=== les joueurs sont 'ils dï¿½ja dï¿½partagï¿½s ? ===
 		if (getFirstDrawIndex(0, perfListe, average) == -1)
 		{
-			//== ok, c'était facile... STOP ;)
+			//== ok, c'ï¿½tait facile... STOP ;)
 			return;
 		}
-		//=== tous les joueurs sont à égalités ?? ====
+		//=== tous les joueurs sont ï¿½ ï¿½galitï¿½s ?? ====
 		double count = getFisrtCountAverage(perfListe, average);
 		boolean draw = true;
 		for (Iterator iter = perfListe.iterator(); iter.hasNext();)
@@ -281,7 +281,7 @@ public class Poule extends Observable implements MatchListener
 				break;
 			}
 		}
-		// si tous les joueurs sont à égalités, on départage à une profondeur supérieur
+		// si tous les joueurs sont ï¿½ ï¿½galitï¿½s, on dï¿½partage ï¿½ une profondeur supï¿½rieur
 		if (draw)
 		{
 			if (average != POINT_AVERAGE)
@@ -290,11 +290,11 @@ public class Poule extends Observable implements MatchListener
 			}
 			return;
 		}
-		// sinon, on départage seulement les égalitées
+		// sinon, on dï¿½partage seulement les ï¿½galitï¿½es
 
 		int index = 0;
 		int firstDrawIndex = 0;
-		// tant qu'il y a des égalitées
+		// tant qu'il y a des ï¿½galitï¿½es
 		while ((firstDrawIndex = getFirstDrawIndex(index, perfListe, average)) != -1)
 		{
 			ArrayList newJoueursList = getDrawJoueurs(firstDrawIndex, perfListe, average);
@@ -306,8 +306,8 @@ public class Poule extends Observable implements MatchListener
 
 	/**
 	 * change l'ordre des joueurs pour une partie de la liste.
-	 * @param firstList la liste à modifier
-	 * @param lastList les joueurs triés à modifier
+	 * @param firstList la liste ï¿½ modifier
+	 * @param lastList les joueurs triï¿½s ï¿½ modifier
 	 */
 	private void replaceJoueurs(ArrayList firstList, ArrayList lastList)
 	{
@@ -368,9 +368,9 @@ public class Poule extends Observable implements MatchListener
 	}
 
 	/**
-	 * donne la liste des joueurs classés selon leurs résultats
+	 * donne la liste des joueurs classï¿½s selon leurs rï¿½sultats
 	 * dans cette poule.
-	 * @return null si la poule n'est pas terminée.
+	 * @return null si la poule n'est pas terminï¿½e.
 	 */
 	public synchronized ArrayList getJoueursParPosition()
 	{
@@ -566,7 +566,7 @@ public class Poule extends Observable implements MatchListener
 		int tableau[][] = new int[2][nbElement];
 		for (int x = 0; x < nbElement; x++)
 		{
-			// cas de la première ligne
+			// cas de la premiï¿½re ligne
 			if (x == 0)
 			{
 				tableau[0][x] = tab[0][0];
@@ -583,13 +583,13 @@ public class Poule extends Observable implements MatchListener
 				{
 					tableau[0][x] = tab[0][x - 1];
 				}
-				//== gestion de la deuxième colonne ==
-				// si dernière ligne
+				//== gestion de la deuxiï¿½me colonne ==
+				// si derniï¿½re ligne
 				if (x == (nbElement - 1))
 				{
 					tableau[1][x] = tab[0][x];
 				}
-				// ligne intermédiaire
+				// ligne intermï¿½diaire
 				else
 				{
 					tableau[1][x] = tab[1][x + 1];
@@ -608,13 +608,13 @@ public class Poule extends Observable implements MatchListener
 	{
 		Joueur j;
 		Match m;
-		String str = "___________  LISTE DES JOUEURS ______________\n";
+		String str = "___________  Ð¡ÐŸÐ˜Ð¡ÐžÐš Ð˜Ð“Ð ÐžÐšÐžÐ’ ______________\n";
 		for (int x = 0; x < joueurs.size(); x++)
 		{
 			j = ((Joueur) joueurs.get(x));
 			str = str + (x + 1) + "\t" + j + "\n";
 		}
-		str += "___________  LISTE DES MATCHS ______________\n";
+		str += "___________  Ð¡ÐŸÐ˜Ð¡ÐžÐš ÐœÐÐ¢Ð§Ð ______________\n";
 		for (int x = 0; x < matchs.size(); x++)
 		{
 			m = ((Match) matchs.get(x));
