@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.*;
 
 /**
- * la fen�tre principale.
+ * la fen�tre principale.
  */
 public class FormMain extends JInternalFrame implements Observer
 {	
@@ -26,10 +26,10 @@ public class FormMain extends JInternalFrame implements Observer
      * 
      */
     private static final long serialVersionUID = 1L;
-    private JButton bCreer = new JButton("Cr�er");
-	private JButton bReload = new JButton("Recharger");
-	private JButton bLancer = new JButton("Lancer");
-	private JButton bSupprimer = new JButton("Supprimer");
+    private JButton bCreer = new JButton("Cоздать");
+	private JButton bReload = new JButton("Загрузка");
+	private JButton bLancer = new JButton("Запуск");
+	private JButton bSupprimer = new JButton("Удаление");
 	private JButton bUpJoueur = new JButton();
 	private JButton bDownJoueur = new JButton();
 	private JButton bAddJoueur = new JButton();    
@@ -68,14 +68,14 @@ public class FormMain extends JInternalFrame implements Observer
 		location = java.lang.ClassLoader.getSystemResource("fleche_droite.gif");
 		bAddJoueur.setIcon(new ImageIcon(location));
 
-		bUpJoueur.setToolTipText("Classe le joueur d'un niveau sup�rieur dans la liste.");
-		bDownJoueur.setToolTipText("Classe le joueur d'un niveau inf�rieur dans la liste.");
-		bAddJoueur.setToolTipText("Ajoute un joueur en derni�re place du tableau s�lectionn�.");        
-        cbTournois.setToolTipText("Liste des formules.");
-        bCreer.setToolTipText("Cr�ation d'un nouveau tableau.");
-        bLancer.setToolTipText("D�marre le tableau s�lectionn�.");
-        bReload.setToolTipText("Recharge la liste des formules afin de prendre en compte les nouvelles formules.");
-		bSupprimer.setToolTipText("Supprime le tableau s�lectionn�.");
+		bUpJoueur.setToolTipText("Ранг игрока более высокого уровня в списке.");
+		bDownJoueur.setToolTipText("Устанавливает игрока на более низком уровне в списке.");
+		bAddJoueur.setToolTipText("Добавляет игрока последним в выбранную таблицу.");
+        cbTournois.setToolTipText("Список формул.");
+        bCreer.setToolTipText("Создайте новую таблицу.");
+        bLancer.setToolTipText("Запустите выбранную таблицу.");
+        bReload.setToolTipText("Перезагрузите список формул, чтобы учесть новые формулы.");
+		bSupprimer.setToolTipText("Удаляет выбранный массив.");
         
         
 	GridBagConstraints constraints = new GridBagConstraints();
@@ -163,7 +163,7 @@ public class FormMain extends JInternalFrame implements Observer
 		constraints.ipadx = 0;
 		constraints.ipady = 0;
 		constraints.insets = new Insets(2, 2, 2, 2);	
-		panel.add(new JLabel("Liste des joueurs"), constraints);
+		panel.add(new JLabel("Список игроков"), constraints);
 
 		constraints.gridx = 4;
 		constraints.gridwidth = 1;
@@ -175,9 +175,9 @@ public class FormMain extends JInternalFrame implements Observer
 		constraints.ipadx = 0;
 		constraints.ipady = 0;
 		constraints.insets = new Insets(2, 2, 2, 2);
-		panel.add(new JLabel("Liste des tableau cr�es"), constraints);
+		panel.add(new JLabel("Список созданных таблиц"), constraints);
 		
-		//==================== 2�me ligne ============================
+		//==================== 2�me ligne ============================
 		ligne++;
 		constraints.gridx = 0;
 		constraints.gridy = ligne;
@@ -343,7 +343,7 @@ public class FormMain extends JInternalFrame implements Observer
 	
 	public void buttonCreerClick()
 	{
-		//== on r�cup�re les joueurs s�lectionn�s ==
+		//== on r�cup�re les joueurs s�lectionn�s ==
 		java.util.List list = Arrays.asList(listeJoueurs.getSelectedValues());
 		DescriptionTableau description = (DescriptionTableau)cbTournois.getSelectedItem();
 		
@@ -351,7 +351,7 @@ public class FormMain extends JInternalFrame implements Observer
 		{	
 			String tabName = JOptionPane.showInputDialog(
 					getContentPane(),
-					"Quel est le nom de votre tableau ?");
+					"Как называется ваша таблица?");
 			if(tabName!=null && !tabName.equals(""))
 			{
 				Tableau tableau = competition.addTableau(description.getIdentifiant(), tabName);	
@@ -359,8 +359,8 @@ public class FormMain extends JInternalFrame implements Observer
                 {
                     JOptionPane.showMessageDialog(
                             getContentPane(),
-                            "Ce nom de tableau existe d�j� ! Veuillez choisirun autre nom !",
-                            "Erreur !",
+                            "Имя этой таблицы уже существует! Пожалуйста, выберите другое имя!",
+                            "Ошибка!",
                             JOptionPane.ERROR_MESSAGE);                      
                     return;
                 }
@@ -373,7 +373,7 @@ public class FormMain extends JInternalFrame implements Observer
 			JOptionPane.showMessageDialog(
 					getContentPane(),
 					e.getMessage(),
-					"Erreur !",
+					"Ошибка!",
 					JOptionPane.ERROR_MESSAGE);			
 		}				
 	}
@@ -495,8 +495,8 @@ public class FormMain extends JInternalFrame implements Observer
 		{
 			JOptionPane.showMessageDialog(
 					getContentPane(),
-					"Vous devez s�lectionner le tableau dans lequel les joueurs seront ajout�s",
-					"Attention !",
+					"Вы должны выбрать таблицу, в которую будут добавлены игроки",
+					"Внимание!",
 					JOptionPane.INFORMATION_MESSAGE);
 			return;
 			
@@ -505,8 +505,8 @@ public class FormMain extends JInternalFrame implements Observer
 		{
 			JOptionPane.showMessageDialog(
 					getContentPane(),
-					"Vous devez s�lectionner des joueurs � ajouter dans le tableau.",
-					"Attention !",
+					"Вы должны выбрать игроков для добавления в таблицу.",
+					"Внимание!",
 					JOptionPane.INFORMATION_MESSAGE);
 			return;
 		}
@@ -514,8 +514,8 @@ public class FormMain extends JInternalFrame implements Observer
 		{
 			JOptionPane.showMessageDialog(
 					getContentPane(),
-					"Vous avez atteint le nombre maximum de joueurs pour ce tableau.",
-					"Attention !",
+					"Вы достигли максимального количества игроков на эту таблицу.",
+					"Внимание!",
 					JOptionPane.INFORMATION_MESSAGE);
 			return;
 			
