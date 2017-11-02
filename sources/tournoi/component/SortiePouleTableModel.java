@@ -21,7 +21,7 @@ public class SortiePouleTableModel extends AbstractTableModel
      */
     
     private static final long serialVersionUID = 1L;
-    private String[] columnNames = {"Nombre de joueurs","Type de tableau"};
+    private String[] columnNames = {"Количество игроков","Тип стола"};
 	private List datas = null;
 			
 	public SortiePouleTableModel()

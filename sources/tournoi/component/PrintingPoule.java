@@ -98,10 +98,10 @@ public class PrintingPoule implements Printable
 		Poule poule = null;
 		int poulesParPage = getPoulesParPage(pageFormat);
 		Graphics2D g2 = (Graphics2D) graphics; 
-		Font f= Font.getFont("Courier");
+		Font f= Font.getFont("Курьер");
 		double scaleW = 1.0;
 		double scaleH = 1.0;		
-		// si la taille de la derni�re poule excede la taille de la page : on redimensionne la poule
+		// si la taille de la derni�re poule excede la taille de la page : on redimensionne la poule
 		if(poulesParPage == 1)
 		{
 			poule = ((PrintedPoule)printedPoulesList.get(0)).getPoule();
@@ -139,8 +139,8 @@ public class PrintingPoule implements Printable
 				g2.drawString(poule.getName()+"  -  "+tabName,0,line);
 				line+=30;
 				g2.setFont(new Font("Helvetica",Font.PLAIN,15));
-				g2.drawString("Liste des joueurs : ",0,line);
-				g2.drawString("Classement final : ",270, line);
+				g2.drawString("Список игроков : ",0,line);
+				g2.drawString("Финальный рейтинг : ",270, line);
 				line+=20;
 				g2.setFont(new Font("Helvetica",Font.PLAIN,10));
 				int numJoueur = 1;
@@ -154,7 +154,7 @@ public class PrintingPoule implements Printable
 				}
 				line += 10;												
 				g2.setFont(new Font("Helvetica",Font.PLAIN,15));
-				g2.drawString("Liste des rencontres : ",0,line);
+				g2.drawString("Список встреч : ",0,line);
 				line += 20;
 				int x1 = 0;
 				int y1 = line-15;
