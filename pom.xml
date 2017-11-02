@@ -9,24 +9,158 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <jdk.version>1.8</jdk.version>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>1</groupId>
+            <artifactId>crimson.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/crimson.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>2</groupId>
+            <artifactId>kaxp.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/jaxp.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>3</groupId>
+            <artifactId>jconfig.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/jconfig.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>4</groupId>
+            <artifactId>jmxri.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/jmxri.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>5</groupId>
+            <artifactId>junit.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/junit.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>6</groupId>
+            <artifactId>myUtils.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/myUtils.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>7</groupId>
+            <artifactId>sax.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/sax.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>8</groupId>
+            <artifactId>stand.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/standalone-compiler.jar</systemPath>
+        </dependency>
+
+    </dependencies>
+
     <build>
+
+        <finalName>TableTenisManager</finalName>
+
+        <resources>
+            <resource>
+                <filtering>false</filtering>
+                <directory>${basedir}/lib</directory>
+                <includes>
+                    <include>**/*.jar</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
 
+
             <plugin>
-                <groupId>com.jolira</groupId>
-                <artifactId>onejar-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>false</downloadJavadocs>
+                </configuration>
+            </plugin>
+
+            <!-- Set a compiler level -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Assembly Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <!-- get all project dependencies -->
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <!-- MainClass in mainfest make a executable jar -->
+                    <archive>
+                        <manifest>
+                            <mainClass>tournoi.xml.XMLAnalyzer</mainClass>
+                        </manifest>
+                    </archive>
+
+                </configuration>
                 <executions>
                     <execution>
-                        <configuration>
-                            <mainClass>org.baeldung.executable.
-                                ExecutableMavenJar</mainClass>
-                            <attachToBuild>true</attachToBuild>
-                            <filename>
-                                ${project.build.finalName}.${project.packaging}
-                            </filename>
-                        </configuration>
+                        <id>make-assembly</id>
+                        <!-- bind to the packaging phase -->
+                        <phase>package</phase>
                         <goals>
-                            <goal>one-jar</goal>
+                            <goal>single</goal>
                         </goals>
                     </execution>
                 </executions>
